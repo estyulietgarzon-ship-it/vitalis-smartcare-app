@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VITALIS SMART CARE</title>
+<meta name="description" content="VITALIS DIGEST y SMART CARE: banda térmica abdominal natural y plataforma educativa de bienestar. Proyecto académico.">
+<meta name="theme-color" content="#0B3D2E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>:root{--forest:#0B3D2E;--deep:#072B20;--emerald:#17745A;--sage:#8FB09B;--turq:#1FB5A3;--cream:#FFF8EC;--warm:#FFFDF8;--coral:#FF6B4A;--gold:#E9B949;--ink:#12261F;--muted:#5E6B63;--line:#E6DCC6;--card:#FFFFFF;--soft:#F3EBD8;--bg:#FFF8EC;--danger:#B3382E;--dsoft:#FDE6E1;--tsoft:#DDF3EE;--gsoft:#FFF1CF;--sh:0 10px 30px rgba(11,61,46,.12);--display:'Fraunces',Georgia,serif;--body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08241B;--card:#0F3426;--soft:#123D2E;--ink:#EEF6F1;--muted:#A6BDB1;--line:#1E5240;--tsoft:#0F4A3F;--gsoft:#3A3014;--dsoft:#44201F;--danger:#F08A84;--cream:#0F3426;--warm:#0B2D22;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#08241B;--card:#0F3426;--soft:#123D2E;--ink:#EEF6F1;--muted:#A6BDB1;--line:#1E5240;--tsoft:#0F4A3F;--gsoft:#3A3014;--dsoft:#44201F;--danger:#F08A84;--cream:#0F3426;--warm:#0B2D22;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-left:max(0px,env(safe-area-inset-left));padding-right:max(0px,env(safe-area-inset-right))}
+h1,h2,h3,h4{font-family:var(--display);line-height:1.15;margin:0 0 .5em;color:var(--forest);letter-spacing:-.01em}
+:root[data-theme="dark"] h1,:root[data-theme="dark"] h2,:root[data-theme="dark"] h3,:root[data-theme="dark"] h4{color:#CFF5EA}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h1,:root:not([data-theme="light"]) h2,:root:not([data-theme="light"]) h3,:root:not([data-theme="light"]) h4{color:#CFF5EA}}
+p{margin:0 0 .9em}a{color:var(--emerald)}img,svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:max(18px,env(safe-area-inset-left))}
+.skip{position:absolute;left:-999px;top:8px;background:var(--forest);color:#fff;padding:8px 12px;border-radius:8px;z-index:100}.skip:focus{left:8px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+header.top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;gap:12px;padding-block:10px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--forest);font-family:var(--display);font-weight:700;font-size:20px}
+:root[data-theme="dark"] .logo{color:#CFF5EA}
+.logo svg{width:34px;height:34px}.logo small{display:block;font-family:var(--body);font-weight:600;font-size:9.5px;letter-spacing:.16em;color:var(--emerald);text-transform:uppercase;margin-top:-3px}
+nav.main{display:flex;gap:2px;flex:1;justify-content:center;flex-wrap:wrap}
+nav.main a{padding:7px 11px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--muted);text-decoration:none;transition:.2s}
+nav.main a:hover{background:var(--tsoft);color:var(--ink)}nav.main a[aria-current="page"]{background:var(--forest);color:#fff}
+.tools{display:flex;gap:8px;align-items:center}
+.sbox{position:relative}.sbox input{width:170px;padding:8px 12px 8px 32px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:13.5px}
+.sbox svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted)}
+.sres{position:absolute;right:0;top:calc(100% + 6px);width:min(360px,86vw);background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh);padding:6px;max-height:60vh;overflow:auto;z-index:60}
+.sres a{display:block;padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:14px}.sres a:hover{background:var(--tsoft)}.sres small{color:var(--muted);display:block}
+.ib{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center}
+.burger{display:none}
+@media(max-width:940px){.burger{display:grid}nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 18px 16px;flex-direction:column;align-items:stretch}nav.main.open{display:flex}nav.main a{padding:11px 14px;font-size:15px}.sbox input{width:120px}}
+@media(max-width:520px){.sbox{display:none}.logo small{display:none}}
+.pgbar{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--turq),var(--gold),var(--coral));width:0;z-index:70}
+main{display:block;min-height:70vh}
+section.mod{animation:fade .5s ease}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--coral)}
+.lead{font-size:18px;color:var(--muted);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;border:0;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;font-size:15px}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sh)}
+.btn.p{background:var(--coral);color:#fff}.btn.g{background:var(--forest);color:#fff}.btn.o{background:transparent;border:2px solid currentColor;color:inherit}.btn.w{background:#25D366;color:#073B1B}
+.btn.s{padding:8px 16px;font-size:13.5px}
+.chip{display:inline-block;padding:4px 11px;border-radius:999px;font-size:12px;font-weight:700;background:var(--tsoft);color:var(--emerald)}
+.chip.c{background:var(--dsoft);color:var(--danger)}.chip.y{background:var(--gsoft);color:#8A6500}
+:root[data-theme="dark"] .chip.y{color:var(--gold)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 80% -10%,#1E7A60 0%,transparent 60%),linear-gradient(160deg,var(--deep),var(--forest) 55%,#12513D);color:#fff;padding:64px 0 80px}
+.hero h1{color:#fff;font-size:clamp(34px,6vw,64px);max-width:15ch}.hero .lead{color:#D6EBE2}
+.hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+@media(max-width:820px){.hero .grid{grid-template-columns:1fr}.hero{padding:40px 0 56px}}
+.float{position:absolute;opacity:.9;animation:fl 9s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(8deg)}}
+.heroart{display:grid;place-items:center;position:relative}
+.heroart svg{width:min(420px,100%);filter:drop-shadow(0 24px 40px rgba(0,0,0,.35))}
+.slogan{font-family:var(--display);font-style:italic;color:var(--gold);font-size:22px;margin:.3em 0 1em}
+.sec{padding:56px 0}.sec.alt{background:var(--soft)}.sec.dark{background:linear-gradient(160deg,var(--deep),var(--forest));color:#fff}.sec.dark h2,.sec.dark h3{color:#fff}
+.pagehead{padding:44px 0 18px}.pagehead h1{font-size:clamp(30px,4.5vw,46px)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 4px 14px rgba(11,61,46,.06);transition:transform .25s,box-shadow .25s}
+.card.hv:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.card h3{font-size:20px}
+.mcard{position:relative;display:block;text-decoration:none;color:inherit;overflow:hidden}
+.mcard .num{position:absolute;right:16px;top:8px;font-family:var(--display);font-size:54px;font-weight:700;color:var(--soft)}
+.mcard .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;margin-bottom:12px;color:#fff}
+.notice{border-left:5px solid var(--gold);background:var(--gsoft);padding:12px 16px;border-radius:10px;font-size:14.5px;margin:14px 0}
+.notice.red{border-color:var(--coral);background:var(--dsoft)}.notice.green{border-color:var(--turq);background:var(--tsoft)}
+.acc details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.acc summary{padding:14px 18px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.acc summary::-webkit-details-marker{display:none}.acc summary::after{content:'+';font-size:22px;line-height:1;color:var(--coral);transition:.2s}.acc details[open] summary::after{transform:rotate(45deg)}
+.acc .in{padding:0 18px 16px;color:var(--muted)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tab{padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-weight:600;font-size:14px}.tab[aria-pressed="true"]{background:var(--forest);color:#fff;border-color:var(--forest)}
+.plant{cursor:pointer;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:24px;padding:0;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.plant:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:var(--sh)}
+.plant .art{height:210px;display:grid;place-items:center}.plant .art svg{height:180px;transition:transform .5s}.plant:hover .art svg{transform:scale(1.08) rotate(3deg)}
+.plant .tx{padding:16px 18px 20px}.plant h3{margin-bottom:2px}.plant .lat{font-style:italic;color:var(--muted);font-size:13px}
+.modal{position:fixed;inset:0;background:rgba(7,43,32,.7);backdrop-filter:blur(4px);z-index:90;display:none;align-items:flex-start;justify-content:center;padding:max(16px,env(safe-area-inset-top)) 14px 16px;overflow:auto}
+.modal.open{display:flex}
+.mbox{background:var(--bg);border-radius:26px;max-width:860px;width:100%;margin:auto;box-shadow:0 30px 80px rgba(0,0,0,.4);overflow:hidden;animation:fade .35s}
+.mhead{display:flex;gap:18px;align-items:center;padding:22px 26px;color:#fff;position:relative}
+.mhead svg{height:120px;flex:none}.mhead h2{color:#fff;margin:0}.mhead .x{position:absolute;right:14px;top:14px;background:rgba(255,255,255,.2);border:0;color:#fff;width:36px;height:36px;border-radius:50%;font-size:20px}
+.mbody{padding:22px 26px 28px}.mbody h3{font-size:18px;margin-top:1.1em;color:var(--emerald)}
+.mbody ul{padding-left:20px;margin:.3em 0 1em}.mbody li{margin-bottom:4px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;overflow:hidden;border-radius:16px;border:1px solid var(--line)}
+.cmp th{background:var(--forest);color:#fff;text-align:left;padding:10px 12px}.cmp td{padding:10px 12px;border-top:1px solid var(--line);background:var(--card);vertical-align:top}
+.tablewrap{overflow-x:auto}
+.breath{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+@media(max-width:760px){.breath{grid-template-columns:1fr}}
+.orbwrap{display:grid;place-items:center;padding:20px}
+.orb{width:min(280px,70vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;color:#fff;font-family:var(--display);font-size:26px;background:radial-gradient(circle at 35% 30%,#4FE0CB,#12A07A 55%,#0B5C46);box-shadow:0 0 0 14px rgba(31,181,163,.15),0 0 0 32px rgba(31,181,163,.08),0 20px 50px rgba(11,61,46,.35);transform:scale(.62);transition:transform 4s ease-in-out}
+.orb small{display:block;font-family:var(--body);font-size:15px;opacity:.9}
+.prog{height:8px;background:var(--soft);border-radius:99px;overflow:hidden;margin:12px 0}.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--turq),var(--gold));transition:width .4s}
+.stat{display:flex;gap:18px;flex-wrap:wrap;margin:8px 0 14px}.stat b{font-family:var(--display);font-size:28px;color:var(--forest);display:block;line-height:1}.stat span{font-size:12px;color:var(--muted)}
+:root[data-theme="dark"] .stat b{color:#CFF5EA}
+.fld{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}
+.in{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.opt{padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card);font-size:14px;font-weight:600}.opt[aria-pressed="true"],.opt.on{background:var(--turq);color:#042;border-color:var(--turq)}
+.chat{background:var(--card);border:1px solid var(--line);border-radius:22px;display:flex;flex-direction:column;height:min(560px,70vh)}
+.log{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:84%;padding:11px 15px;border-radius:18px;font-size:15px;animation:fade .3s}.msg.u{align-self:flex-end;background:var(--forest);color:#fff;border-bottom-right-radius:4px}.msg.b{background:var(--tsoft);border-bottom-left-radius:4px}.msg.b.warn{background:var(--dsoft)}
+.msg a{font-weight:700}.msg .src{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+.cform{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}.cform input{flex:1}
+.hist{display:grid;gap:8px;max-height:300px;overflow:auto}
+.hi{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--soft);border-radius:12px;padding:9px 12px;font-size:14px}
+.chart{width:100%;height:auto}
+.art-card{display:flex;flex-direction:column;cursor:pointer;text-align:left;padding:0;overflow:hidden}
+.art-card .im{height:120px;display:grid;place-items:center}.art-card .im svg{height:92px}.art-card .tx{padding:14px 16px 18px}
+footer{background:var(--deep);color:#CFE4DA;padding:42px 0 90px;margin-top:0;font-size:14px}footer a{color:#fff}footer h4{color:#fff;font-size:16px}
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:55;display:flex;align-items:center;gap:8px;background:#25D366;color:#073B1B;text-decoration:none;font-weight:800;padding:12px 16px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:.2s}.fab:hover{transform:scale(1.05)}.fab svg{width:24px;height:24px}
+@media(max-width:520px){.fab span{display:none}.fab{padding:14px}}
+.toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--forest);color:#fff;padding:10px 18px;border-radius:999px;z-index:95;font-size:14px;box-shadow:var(--sh);animation:fade .3s}
+.hot{cursor:pointer;transition:.2s}.hot:hover,.hot:focus{filter:brightness(1.12)}
+.pulse{animation:pl 2.2s infinite}@keyframes pl{0%{r:9;opacity:1}100%{r:22;opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ===== Capa de color v2 ===== */
+body{background:radial-gradient(900px 500px at 100% 0,rgba(255,107,74,.10),transparent 60%),radial-gradient(800px 500px at 0 30%,rgba(31,181,163,.12),transparent 60%),var(--bg)}
+section.mod{--acc:#17745A;--acc2:#1FB5A3}
+.pagehead{margin-top:22px;padding:34px 30px 30px;border-radius:28px;color:#fff;position:relative;overflow:hidden;background:linear-gradient(120deg,var(--acc),var(--acc2));box-shadow:var(--sh)}
+.pagehead::before,.pagehead::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.14)}
+.pagehead::before{width:260px;height:260px;right:-60px;top:-90px}.pagehead::after{width:140px;height:140px;right:150px;bottom:-70px;background:rgba(233,185,73,.35)}
+.pagehead h1{color:#fff;position:relative}.pagehead .lead{color:#fff;opacity:.92;position:relative}.pagehead .eyebrow{color:#FFE7A3;position:relative}
+.pagehead .lead b{color:#fff}
+.card{border-top:5px solid var(--acc2,var(--turq))}
+.card.plant,.plant{border-top:0}
+.btn.p{background:linear-gradient(90deg,#FF6B4A,#FF9A5C);box-shadow:0 6px 16px rgba(255,107,74,.35)}
+.btn.g{background:linear-gradient(90deg,#0B3D2E,#17745A)}
+.sec.alt{background:linear-gradient(135deg,var(--tsoft),var(--gsoft) 60%,var(--dsoft))}
+.hero{background:radial-gradient(600px 400px at 85% 10%,rgba(255,107,74,.45),transparent 60%),radial-gradient(700px 500px at 70% 100%,rgba(233,185,73,.35),transparent 60%),radial-gradient(900px 500px at 0 0,rgba(31,181,163,.45),transparent 60%),linear-gradient(160deg,var(--deep),var(--forest) 55%,#12513D)}
+.mcard:nth-child(3n+1){border-top-color:var(--coral)}.mcard:nth-child(3n+2){border-top-color:var(--gold)}.mcard:nth-child(3n){border-top-color:var(--turq)}
+.opt[aria-pressed="true"],.opt.on{background:linear-gradient(90deg,var(--turq),#6FE0C8)}
+.tab[aria-pressed="true"]{background:linear-gradient(90deg,var(--acc),var(--acc2));border-color:transparent}
+nav.main a[aria-current="page"]{background:linear-gradient(90deg,var(--forest),var(--emerald))}
+.pipe{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.pipe span{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--muted)}
+.pipe span.on{background:var(--tsoft);color:var(--emerald);border-color:var(--turq)}.pipe span.no{background:var(--dsoft);color:var(--danger);border-color:var(--coral)}.pipe span.llm{background:linear-gradient(90deg,#8E6FC4,#FF6B4A);color:#fff;border:0}
+.aistat{display:flex;gap:8px;align-items:center;font-size:13.5px;font-weight:600}.dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(233,185,73,.25)}.dot.on{background:#2BC48A;box-shadow:0 0 0 4px rgba(43,196,138,.25)}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:10px 0}.flow div{background:var(--soft);border-radius:14px;padding:10px 12px;font-size:13px;position:relative}.flow b{display:block;color:var(--emerald)}
+.ins{display:grid;gap:8px}.ins div{padding:10px 12px;border-radius:12px;background:linear-gradient(90deg,var(--tsoft),var(--gsoft));font-size:14px}
+
+.pagehead{margin-bottom:24px}
+</style></head><body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="pgbar" id="pgbar" aria-hidden="true"></div>
+<header class="top"><div class="wrap bar">
+<a class="logo" href="#inicio" id="logo" aria-label="VITALIS, ir al inicio"><span id="logoart"></span><span>VITALIS<small>SMART CARE</small></span></a>
+<nav class="main" id="nav" aria-label="Módulos"></nav>
+<div class="tools">
+<div class="sbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="gs" type="search" placeholder="Buscar contenido…" aria-label="Buscar en toda la plataforma" autocomplete="off"><div class="sres" id="gsres" hidden></div></div>
+<button class="ib" id="theme" aria-label="Cambiar entre modo claro y oscuro" title="Modo claro/oscuro"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+<button class="ib burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></div></header>
+
+<main id="main" tabindex="-1">
+
+<!-- 1. INICIO -->
+<section class="mod" id="m-inicio" hidden>
+<div class="hero"><div class="wrap grid">
+<div><span class="eyebrow" style="color:var(--gold)">VITALIS DIGEST · SMART CARE</span>
+<h1>Tu bienestar también merece una pausa</h1>
+<p class="slogan">Calor que cuida, naturaleza que alivia</p>
+<p class="lead">VITALIS es una marca de bienestar natural: una banda térmica abdominal reutilizable con manzanilla, jengibre y menta, y una plataforma digital con respiración guiada, hábitos y un asistente por reglas. Acompaña tu pausa; no reemplaza la atención médica.</p>
+<p style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn p" href="#producto">Explorar VITALIS →</a><a class="btn o" href="#experiencia" style="color:#fff">Conocer mi experiencia</a></p>
+<p style="font-size:13px;color:#BFDCCF;margin-top:14px">Proyecto académico · Universidad Militar Nueva Granada · Versión prototipo</p></div>
+<div class="heroart" id="heroart"></div></div>
+<div id="floaters" aria-hidden="true"></div></div>
+<div class="sec"><div class="wrap">
+<span class="eyebrow">Tres plantas, una pausa</span><h2>El relleno vegetal de VITALIS DIGEST</h2>
+<div class="grid3" id="homeplants"></div></div></div>
+<div class="sec alt"><div class="wrap grid2" style="align-items:center"><div>
+<span class="eyebrow">Nuestro propósito</span><h2>La banda abraza, el QR escucha</h2>
+<p>Muchas personas buscan una pausa simple cuando sienten tensión o molestias leves. VITALIS une dos cosas: <b>calor externo suave</b> con plantas tradicionales y <b>una plataforma digital</b> educativa a la que se accede escaneando un QR de la banda.</p>
+<p>Todo con límites claros: no diagnosticamos, no recetamos y te invitamos a consultar cuando es necesario.</p></div>
+<div class="card"><h3>¿Qué hay aquí hoy?</h3><ul><li>Módulos educativos y de bienestar <b>funcionando</b>: respiración guiada, registro personal, hábitos, biblioteca.</li><li>Un asistente por <b>reglas y palabras clave</b> (no es IA generativa).</li><li>Especificaciones técnicas del producto: <b>pendientes de validación</b>.</li></ul><a class="btn g s" href="#seguridad">Ver transparencia</a></div></div></div>
+<div class="sec"><div class="wrap"><span class="eyebrow">Explora</span><h2>Diez módulos, una experiencia</h2>
+<div class="stat"><div><b id="visited">0</b><span>módulos visitados de 10</span></div></div><div class="prog"><i id="visprog"></i></div>
+<div class="grid3" id="modgrid"></div></div></div>
+</section>
+
+<!-- 2. PRODUCTO -->
+<section class="mod" id="m-producto" hidden><div class="wrap">
+<div class="pagehead"><span class="eyebrow">Módulo 2</span><h1>Conoce VITALIS DIGEST</h1><p class="lead">Una banda térmica abdominal natural, reutilizable y de uso externo. Toca cada parte de la ilustración para explorarla.</p></div>
+<div class="grid2" style="align-items:start"><div class="card"><div id="bandart" style="max-width:520px;margin:auto"></div>
+<p style="font-size:12.5px;color:var(--muted);text-align:center">Ilustración conceptual. Forma y materiales definitivos: por validar.</p><div id="bandinfo" class="notice green" role="status" aria-live="polite"><b>Toca una zona</b> de la banda para ver qué es y qué falta por validar.</div>
+<div class="chips" id="bandchips"></div></div>
+<div><div class="tabs" id="ptabs" role="tablist"></div><div class="card" id="pbody" aria-live="polite"></div></div></div>
+<h2 style="margin-top:36px">Ficha del producto</h2>
+<div class="tablewrap"><table class="cmp"><thead><tr><th>Concepto</th><th>Qué se sabe hoy</th><th>Estado</th></tr></thead><tbody id="ficha"></tbody></table></div>
+<div class="notice" style="margin-top:18px"><b>Honestidad técnica:</b> no publicamos temperaturas, tiempos, tallas ni materiales que no hayan sido definidos y validados. Aparecen marcados como <span class="chip y">Por validar</span>.</div>
+<h2 style="margin-top:30px">Lo definido y lo pendiente</h2>
+<div class="grid2"><div class="card"><h3>✔ Definido / implementado</h3><div id="doneList"></div></div><div class="card"><h3>⏳ Pendiente de validación</h3><div id="pendList"></div></div></div>
+</div></section>
+
+<!-- 3. PLANTAS -->
+<section class="mod" id="m-plantas" hidden><div class="wrap">
+<div class="pagehead"><span class="eyebrow">Módulo 3</span><h1>Jardín botánico VITALIS</h1><p class="lead">Descubre las plantas del relleno y una planta complementaria. Cada ficha separa el uso tradicional de la evidencia científica y no promete curar enfermedades.</p></div>
+<div class="grid3" id="garden"></div>
+<h2 style="margin-top:38px">Compara las tres plantas del relleno</h2>
+<div class="tablewrap"><table class="cmp" id="cmp"></table></div>
+<div class="notice red" style="margin-top:18px"><b>Importante:</b> las plantas aquí no se presentan como tratamiento de gastritis, colon irritable, endometriosis ni otras enfermedades. Son contenido educativo.</div>
+</div></section>
+
+<!-- 4. RESPIRA -->
+<section class="mod" id="m-respira" hidden><div class="wrap">
+<div class="pagehead"><span class="eyebrow">Módulo 4</span><h1>Respira con VITALIS</h1><p class="lead">Respiración guiada, suave y sin retenciones prolongadas. Detén el ejercicio si sientes mareo, incomodidad o falta de aire.</p></div>
+<div class="card" style="margin-bottom:20px"><h3>¿Cuál me conviene hoy? <span class="chip">Recomendador explicable</span></h3>
+<div class="grid3"><div><label class="fld" for="rObj">¿Qué buscas ahora?</label><select id="rObj" class="in"><option value="relajar">Relajarme</option><option value="molestia">Calmarme ante una molestia leve</option><option value="dormir">Prepararme para dormir</option><option value="aprender">Aprender a respirar mejor</option></select></div>
+<div><label class="fld" for="rMom">¿En qué momento estás?</label><select id="rMom" class="in"><option value="dia">Mañana / día</option><option value="tarde">Tarde</option><option value="noche">Noche</option></select></div>
+<div><label class="fld" for="rTime">Tiempo disponible</label><select id="rTime" class="in"><option value="1">1 minuto</option><option value="3" selected>3 minutos</option><option value="5">5 minutos</option></select></div></div>
+<div id="recom" class="notice green" role="status" aria-live="polite"></div></div>
+<div class="breath"><div class="orbwrap"><div class="orb" id="orb" role="img" aria-label="Círculo de respiración"><div><span id="cue">Listo</span><small id="cuesub">Presiona iniciar</small></div></div></div>
+<div class="card"><div class="tabs" id="etabs"></div><h3 id="etitle"></h3><p id="egoal"></p><ol id="ehow" style="padding-left:20px"></ol>
+<div class="chips" id="dchips" role="group" aria-label="Duración"></div>
+<div class="stat"><div><b id="tleft">3:00</b><span>tiempo restante</span></div><div><b id="cyc">0</b><span>ciclos completados</span></div></div><div class="prog" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bprog"><i id="bprogi"></i></div>
+<p style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn g" id="bStart">▶ Iniciar</button><button class="btn o s" id="bPause" disabled>❚❚ Pausar</button><button class="btn o s" id="bReset">↺ Reiniciar</button><button class="btn p s" id="bStop">■ Detener (me siento incómodo)</button></p>
+<label style="display:flex;gap:8px;align-items:center;font-size:14px"><input type="checkbox" id="snd"> Sonido ambiental suave (desactivado por defecto)</label>
+<p id="msg" style="font-style:italic;color:var(--muted);min-height:1.6em" aria-live="polite"></p>
+<div id="afterB" hidden class="notice green">Ejercicio completado. <button class="btn s g" id="saveB">Guardar en Mi experiencia</button></div></div></div>
+<div class="notice red" style="margin-top:20px"><b>Para y respira normal</b> si sientes mareo, hormigueo, falta de aire o incomodidad. Si ocurre seguido, consulta a un profesional. Si tienes una enfermedad respiratoria o cardiovascular, consulta antes de practicar.</div>
+</div></section>
+
+<!-- 5. HABITOS -->
+<section class="mod" id="m-habitos" hidden><div class="wrap">
+<div class="pagehead"><span class="eyebrow">Módulo 5</span><h1>Bienestar natural: pequeños hábitos</h1><p class="lead">Recomendaciones generales de autocuidado. Sin dosis, sin automedicación, sin tratamientos caseros para enfermedades.</p></div>
+<div class="acc" id="habacc"></div>
+<h2 style="margin-top:34px">¿Qué puedo hacer cuando siento molestias abdominales?</h2>
+<div class="grid2" style="align-items:start"><div class="card"><h3>Orientación general</h3><p style="font-size:14px;color:var(--muted)">Marca lo que ya hiciste:</p><div id="tips"></div><div class="prog"><i id="tipprog"></i></div><span id="tipcount" style="font-size:13px;color:var(--muted)"></span></div>
+<div class="card" style="border:2px solid var(--coral)"><h3>⚠ Signos de alarma</h3><p style="font-size:14px">¿Presentas alguno ahora? Márcalo:</p><div id="alarms"></div><div id="alarmres" role="alert" style="margin-top:10px"></div></div></div>
+<div class="notice red" style="margin-top:18px">Estos casos requieren <b>valoración médica</b> y no deben manejarse solo con remedios naturales o con la banda térmica. Esta plataforma no diagnostica ni recomienda medicamentos.</div>
+</div></section>
+
+<!-- 6. EXPERIENCIA -->
+<section class="mod" id="m-experiencia" hidden><div class="wrap">
+<div class="pagehead"><span class="eyebrow">Módulo 6</span><h1>Mi experiencia VITALIS</h1><p class="lead">Un diario de bienestar personal. Se guarda solo en este navegador, sin cuenta. No es un diagnóstico ni una historia clínica.</p></div>
+<div class="grid2" style="align-items:start"><form class="card" id="expform" novalidate><h3>¿Cómo te sientes hoy?</h3>
+<div class="chips" id="moodchips" role="group" aria-label="Estado"></div>
+<label class="fld" for="eAct">Actividad realizada</label><select id="eAct" class="in"></select>
+<label class="fld">¿Usaste la banda VITALIS DIGEST?</label><div class="chips" id="bandchoice" role="group"><button type="button" class="opt" data-v="si" aria-pressed="false">Sí</button><button type="button" class="opt" data-v="no" aria-pressed="true">No</button><button type="button" class="opt" data-v="na" aria-pressed="false">Aún no la tengo</button></div>
+<label class="fld" for="eScore">Bienestar ahora: <b id="scoreval">3</b>/5</label><input type="range" id="eScore" min="1" max="5" value="3" class="in" style="padding:0">
+<label class="fld" for="eNote">Nota breve (opcional, sin datos personales)</label><textarea id="eNote" class="in" rows="2" maxlength="140"></textarea>
+<p id="eerr" role="alert" style="color:var(--danger);font-size:14px;min-height:1.2em"></p>
+<button class="btn p" type="submit">Guardar registro</button> <span id="eflash" role="status"></span><div id="eadv" aria-live="polite"></div></form>
+<div><div class="card"><h3>Resumen</h3><div class="stat"><div><b id="sTot">0</b><span>registros</span></div><div><b id="sAvg">–</b><span>bienestar promedio</span></div><div><b id="sBand">0</b><span>usos de banda</span></div></div><div id="charts"></div></div><div class="card" style="margin-top:16px"><h3>Patrones de tu diario <span class="chip y">estadística descriptiva</span></h3><div class="ins" id="ins"></div><p style="font-size:12.5px;color:var(--muted);margin:8px 0 0">Cálculo simple con tus registros; no es diagnóstico ni predicción.</p></div></div></div>
+<div class="card" style="margin-top:20px"><div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center"><h3 style="margin:0">Historial</h3><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn o s" id="demoBtn">Cargar datos de ejemplo (ficticios)</button><button class="btn o s" id="csvBtn">Descargar CSV</button><button class="btn o s" id="clrBtn">Borrar todo</button></div></div>
+<p id="clrconf" hidden class="notice red">¿Seguro que quieres borrar todos los registros? <button class="btn s p" id="clrYes">Sí, borrar</button> <button class="btn s o" id="clrNo">Cancelar</button></p>
+<div class="hist" id="hist" style="margin-top:12px"></div></div>
+<div class="notice" style="margin-top:18px">Los datos de ejemplo son <b>ficticios</b> y se marcan como “ejemplo”. Los registros reales no se envían a ningún servidor.</div>
+</div></section>
+
+<!-- 7. ASISTENTE -->
+<section class="mod" id="m-asistente" hidden><div class="wrap">
+<div class="pagehead"><span class="eyebrow">Módulo 7</span><h1>VITALIS SMART CARE · Asistente</h1><p class="lead">Combina reglas de seguridad, búsqueda en los contenidos de VITALIS (RAG) y, solo si el servidor está conectado, un modelo de lenguaje. <b>No diagnostica ni reemplaza a un profesional.</b></p></div>
+<div class="grid2" style="align-items:start"><div class="chat"><div class="log" id="log" aria-live="polite"></div><form class="cform" id="cform"><input id="cin" class="in" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta" autocomplete="off"><button class="btn g" type="submit">Enviar</button></form></div>
+<div><div class="card"><h3>IA en VITALIS: cómo responde</h3><div class="aistat"><span class="dot" id="aidot"></span><span id="aitxt">Verificando…</span></div>
+<div class="flow"><div><b>1 · Seguridad</b>Reglas que detectan alarmas, dosis y diagnósticos <i>antes</i> de todo.</div><div><b>2 · Recuperación (RAG)</b>Búsqueda BM25 en los contenidos de VITALIS; muestra las fuentes usadas.</div><div><b>3 · Generación</b>LLM solo si el servidor está conectado; si no, texto de la fuente.</div></div></div>
+<div class="card" style="margin-top:16px"><h3>Preguntas sugeridas</h3><div class="chips" id="sugg"></div></div><div class="notice" style="margin-top:16px"><b>Cómo funciona:</b> reconoce palabras clave, responde con textos preparados, te enlaza al módulo relacionado y te dice cuando no tiene información. No diagnostica ni receta. Una futura fase 2 (LLM + RAG supervisado) está <b>proyectada, no implementada</b>.</div><p><a class="btn w s" href="#" data-wa>Escribirnos por WhatsApp</a> <button class="btn o s" id="clrchat">Nueva conversación</button></p></div></div>
+</div></section>
+
+<!-- 8. APRENDE -->
+<section class="mod" id="m-aprende" hidden><div class="wrap">
+<div class="pagehead"><span class="eyebrow">Módulo 8</span><h1>Aprende con VITALIS</h1><p class="lead">Biblioteca visual de artículos breves. Filtra por categoría o busca por palabra.</p></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center"><div class="tabs" id="acats" style="margin:0"></div><input class="in" id="asrch" type="search" placeholder="Buscar artículo…" aria-label="Buscar artículo" style="max-width:260px"></div>
+<p id="acount" style="color:var(--muted);font-size:14px"></p><div class="grid3" id="agrid"></div>
+<h2 style="margin-top:38px" id="refs">Referencias</h2><p style="font-size:14px;color:var(--muted)">Fuentes de apoyo educativo. <b>Verifica enlaces y vigencia antes de citarlas formalmente.</b> No sustituyen asesoría profesional.</p><ol id="reflist" style="font-size:14px"></ol>
+</div></section>
+
+<!-- 9. SEGURIDAD -->
+<section class="mod" id="m-seguridad" hidden><div class="wrap">
+<div class="pagehead"><span class="eyebrow">Módulo 9</span><h1>Cuidados y seguridad</h1><p class="lead">Lo que debes saber antes de usar la banda y esta plataforma.</p></div>
+<div class="grid2"><div class="card"><h3>Uso externo</h3><p>VITALIS DIGEST es de uso externo. El relleno vegetal no es para ingerir.</p></div>
+<div class="card"><h3>Calor externo: precauciones generales</h3><ul><li>El calor debe sentirse agradable, nunca ardiente.</li><li>No usar sobre piel lesionada, con irritación o quemaduras.</li><li>No dormirte con la banda puesta.</li><li>Retirarla si hay enrojecimiento, ardor, dolor o malestar.</li><li>Personas con sensibilidad reducida en la piel (por ejemplo, algunas con diabetes): consultar antes.</li></ul><span class="chip y">Los parámetros específicos del producto están pendientes de validación técnica</span></div>
+<div class="card"><h3>Consulta antes si…</h3><ul><li>Estás embarazada o en lactancia.</li><li>Tomas anticoagulantes u otros medicamentos de uso continuo.</li><li>Tienes alergia a plantas (manzanilla/Asteraceae, jengibre, menta).</li><li>Tienes reflujo, cálculos biliares, o una enfermedad crónica.</li><li>Los síntomas son persistentes o recurrentes.</li></ul></div>
+<div class="card" style="border:2px solid var(--coral)"><h3>⚠ Busca atención médica si hay</h3><ul><li>Dolor intenso o repentino</li><li>Fiebre</li><li>Vómitos persistentes</li><li>Desmayo</li><li>Sangrado inusual</li><li>Empeoramiento de los síntomas</li></ul></div>
+<div class="card"><h3>Privacidad de tus datos</h3><p>Los registros se guardan solo en tu navegador. No hay cuentas ni servidor en esta versión. Si algún día se agregan, se pedirá autorización conforme a la Ley 1581 de 2012.</p></div>
+<div class="card"><h3>Límites de SMART CARE</h3><p>No diagnostica, no prescribe, no reemplaza al personal de salud. El asistente usa reglas y palabras clave; no es una IA generativa.</p></div></div>
+<h2 style="margin-top:34px">Transparencia: qué es real y qué es proyección</h2>
+<div class="tablewrap"><table class="cmp"><thead><tr><th>Elemento</th><th>Estado</th></tr></thead><tbody id="transp"></tbody></table></div>
+<div class="notice" style="margin-top:18px">Plataforma desarrollada en el marco de un proyecto académico. No hay estudios clínicos, ni usuarios reales validados, ni ventas, reportados aquí.</div>
+</div></section>
+
+<!-- 10. FAQ -->
+<section class="mod" id="m-faq" hidden><div class="wrap">
+<div class="pagehead"><span class="eyebrow">Módulo 10</span><h1>Preguntas frecuentes</h1></div>
+<div class="acc" id="faqacc"></div>
+<div class="card" style="margin-top:22px"><h3>¿Otra duda?</h3><p>Pregunta al asistente o escríbenos por WhatsApp: +57 320 839 4845.</p><a class="btn g s" href="#asistente">Ir al asistente</a> <a class="btn w s" href="#" data-wa>WhatsApp</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap grid2"><div><h4>VITALIS DIGEST · SMART CARE</h4><p>Calor que cuida, naturaleza que alivia.</p><p>Proyecto académico — Universidad Militar Nueva Granada. Equipo: Yuliet Carolina Garzón Alfonso, Cesar Augusto Bonilla Gil, Santiago Pira Rubio, Juan Esteban Siza.</p></div>
+<div><h4>Contacto</h4><p>WhatsApp: <a href="#" data-wa>+57 320 839 4845</a></p><p style="font-size:12.5px">VITALIS no es un medicamento ni un dispositivo médico, no diagnostica ni reemplaza la consulta con personal de salud. En caso de urgencia acude a tu servicio médico.</p><p><a href="#aprende" id="reflink">Referencias</a> · <a href="#seguridad">Seguridad y transparencia</a></p></div></div></footer>
+<a class="fab" href="#" data-wa aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.500 3 6.500 6.500 6.500l1-1.800-2-1-1 .8c-1-.4-1.800-1.200-2.200-2.200l.8-1-1-2z" fill="currentColor" stroke="none"/></svg><span>WhatsApp</span></a>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle"><div class="mbox" id="mbox"></div></div>
+
+<script>/* ===== Ilustraciones SVG originales (sin dependencias externas) ===== */
+const ART={
+logo:()=>`<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#0B3D2E"/><path d="M24 38C14 31 12 21 18 14c3 2 6 5 6 10 0-5 3-8 6-10 6 7 4 17-6 24z" fill="#1FB5A3"/><path d="M24 36V22" stroke="#FFF8EC" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="12" r="3.2" fill="#E9B949"/></svg>`,
+chamomile:()=>{let p='';for(let i=0;i<14;i++){p+=`<ellipse cx="100" cy="46" rx="9" ry="27" fill="#FFFDF8" stroke="#E5DCC4" stroke-width="1" transform="rotate(${i*360/14} 100 100)"/>`}
+return `<svg viewBox="0 0 200 240" role="img" aria-label="Ilustración de manzanilla"><path d="M100 128C100 170 96 205 92 232" stroke="#3E8B5A" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M97 190c-24-4-40-18-44-34 22 0 38 12 44 34z" fill="#4FA56C"/><path d="M96 168c20-2 36-14 42-28-20-2-36 8-42 28z" fill="#3E8B5A"/><path d="M96 214c-14 0-24-8-26-18 14-1 24 6 26 18z" fill="#6FBF8A"/>${p}<circle cx="100" cy="100" r="22" fill="#E9B949"/><circle cx="100" cy="100" r="22" fill="none" stroke="#C99A24" stroke-width="2" stroke-dasharray="2 4"/><circle cx="93" cy="94" r="5" fill="#F6D77A"/></svg>`},
+ginger:()=>`<svg viewBox="0 0 200 240" role="img" aria-label="Ilustración de jengibre"><path d="M104 30C98 70 96 100 100 120" stroke="#4FA56C" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M104 40c-22-8-34-26-34-44 20 8 32 26 34 44z" transform="translate(0 20)" fill="#4FA56C"/><path d="M104 62c24-6 40-22 44-40-22 4-38 20-44 40z" fill="#3E8B5A"/><path d="M52 150c-6-16 6-30 22-28 6-14 28-16 38-4 12-8 34-4 40 12 14 4 22 20 12 32-8 12-22 12-30 8-8 10-28 12-38 2-12 6-34 4-38-10-8 0-6-12-6-12z" fill="#D9A864" stroke="#B98338" stroke-width="2"/><path d="M82 128c-6 10-4 22 6 30M128 126c8 8 8 22 0 32M60 162c10 4 20 2 26-6M130 168c8 4 18 0 24-8" stroke="#B98338" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="68" cy="146" r="4" fill="#F1D6A0"/><circle cx="148" cy="150" r="4" fill="#F1D6A0"/><path d="M96 196c14 6 36 6 52-4" stroke="#B98338" stroke-width="2" fill="none" opacity=".6"/><ellipse cx="108" cy="204" rx="40" ry="10" fill="#F1D6A0" opacity=".55"/></svg>`,
+mint:()=>{const leaf=(x,y,r,s,c)=>`<g transform="translate(${x} ${y}) rotate(${r}) scale(${s})"><path d="M0 0C-26-10-34-40-6-62 22-40 26-10 0 0z" fill="${c}"/><path d="M0 0V-56" stroke="#0F5A3E" stroke-width="1.8" opacity=".6"/><path d="M0-14l-10-8M0-14l10-8M0-28l-11-8M0-28l11-8M0-42l-8-6M0-42l8-6" stroke="#0F5A3E" stroke-width="1.2" opacity=".5" fill="none"/></g>`;
+return `<svg viewBox="0 0 200 240" role="img" aria-label="Ilustración de menta"><path d="M100 232C98 190 102 140 100 60" stroke="#2F8A55" stroke-width="5" fill="none" stroke-linecap="round"/>${leaf(100,70,0,1.15,'#37B07A')}${leaf(100,120,-58,1.15,'#2FA06C')}${leaf(100,120,58,1.15,'#44C08A')}${leaf(100,170,-62,1.1,'#44C08A')}${leaf(100,170,62,1.1,'#2FA06C')}${leaf(100,205,-70,.8,'#37B07A')}${leaf(100,205,70,.8,'#37B07A')}</svg>`},
+lavender:()=>{let b='';for(let i=0;i<9;i++){const y=34+i*14,w=i<2?6:9;b+=`<ellipse cx="${100-w}" cy="${y}" rx="6" ry="9" fill="#9A7CCB" transform="rotate(-24 ${100-w} ${y})"/><ellipse cx="${100+w}" cy="${y+5}" rx="6" ry="9" fill="#B49AE0" transform="rotate(24 ${100+w} ${y+5})"/>`}
+return `<svg viewBox="0 0 200 240" role="img" aria-label="Ilustración de lavanda"><path d="M100 232C100 180 100 120 100 40" stroke="#6B9A72" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M100 200c-22-4-38-18-42-34 20 0 36 12 42 34zM100 214c20-2 34-12 40-26-20-2-34 8-40 26z" fill="#7DAB84"/>${b}<ellipse cx="100" cy="30" rx="5" ry="9" fill="#9A7CCB"/></svg>`},
+band:(opts={})=>`<svg viewBox="0 0 420 240" role="img" aria-label="Banda térmica abdominal VITALIS DIGEST (ilustración conceptual)"><defs><linearGradient id="bgr" x1="0" x2="1"><stop offset="0" stop-color="#17745A"/><stop offset="1" stop-color="#0B3D2E"/></linearGradient></defs>
+<g id="band-strap-l"><path d="M10 92c0-8 6-14 14-14h70v84H24c-8 0-14-6-14-14z" fill="#8FB09B" stroke="#6C9279" stroke-width="2"/><g stroke="#6C9279" stroke-width="1.5" opacity=".6"><path d="M30 90v68M44 90v68M58 90v68M72 90v68M86 90v68"/></g></g>
+<g id="band-strap-r"><path d="M410 92c0-8-6-14-14-14h-70v84h70c8 0 14-6 14-14z" fill="#8FB09B" stroke="#6C9279" stroke-width="2"/><g stroke="#6C9279" stroke-width="1.5" opacity=".6"><path d="M390 90v68M376 90v68M362 90v68M348 90v68M334 90v68"/></g></g>
+<g id="band-body"><path d="M92 40h236c18 0 30 12 30 30v100c0 18-12 30-30 30H92c-18 0-30-12-30-30V70c0-18 12-30 30-30z" fill="url(#bgr)" stroke="#072B20" stroke-width="2.5"/><g stroke="#FFF8EC" stroke-width="1.6" stroke-dasharray="5 5" opacity=".55" fill="none"><rect x="76" y="54" width="268" height="132" rx="20"/></g></g>
+<g id="band-fill" opacity=".95"><rect x="96" y="76" width="64" height="88" rx="14" fill="#1FB5A3" opacity=".35"/><rect x="178" y="76" width="64" height="88" rx="14" fill="#E9B949" opacity=".4"/><rect x="260" y="76" width="64" height="88" rx="14" fill="#44C08A" opacity=".4"/><circle cx="128" cy="120" r="9" fill="#FFFDF8"/><circle cx="210" cy="120" r="9" fill="#D9A864"/><circle cx="292" cy="120" r="9" fill="#37B07A"/></g>
+<g id="band-qr"><rect x="296" y="150" width="38" height="38" rx="6" fill="#FFF8EC"/><g fill="#0B3D2E"><rect x="301" y="155" width="10" height="10"/><rect x="319" y="155" width="10" height="10"/><rect x="301" y="173" width="10" height="10"/><rect x="316" y="170" width="5" height="5"/><rect x="324" y="176" width="5" height="7"/><rect x="314" y="179" width="6" height="4"/></g></g>
+<g id="band-logo"><text x="210" y="62" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#FFF8EC" letter-spacing="3">VITALIS</text></g>
+</svg>`
+};
+const ARTCOL={chamomile:'#FFF1CF',ginger:'#F8E4C4',mint:'#DDF3EE',lavender:'#E9E0F7'};
+
+/* ===== Contenido educativo y datos ===== */
+const WA='573208394845',WA_TXT='Hola, quiero más información sobre VITALIS DIGEST y VITALIS SMART CARE';
+const WA_URL='https://wa.me/'+WA+'?text='+encodeURIComponent(WA_TXT);
+const MODS=[
+['inicio','Inicio'],['producto','Conoce VITALIS'],['plantas','Jardín botánico'],['respira','Respira'],['habitos','Bienestar natural'],['experiencia','Mi experiencia'],['asistente','Asistente'],['aprende','Aprende'],['seguridad','Cuidados y seguridad'],['faq','Preguntas frecuentes']];
+const REFS={
+nccih_cham:{t:'NCCIH (NIH). Chamomile. Información para el consumidor.',u:'https://www.nccih.nih.gov/health/chamomile'},
+nccih_ging:{t:'NCCIH (NIH). Ginger. Información para el consumidor.',u:'https://www.nccih.nih.gov/health/ginger'},
+nccih_pep:{t:'NCCIH (NIH). Peppermint Oil. Información para el consumidor.',u:'https://www.nccih.nih.gov/health/peppermint-oil'},
+nccih_lav:{t:'NCCIH (NIH). Lavender. Información para el consumidor.',u:'https://www.nccih.nih.gov/health/lavender'},
+who:{t:'World Health Organization. WHO Monographs on Selected Medicinal Plants (Vols. 1–4). Ginebra: OMS.',u:'https://www.who.int/publications'},
+ema:{t:'European Medicines Agency – HMPC. Monografías comunitarias de plantas medicinales (manzanilla, jengibre, menta, lavanda).',u:'https://www.ema.europa.eu/en/human-regulatory-overview/herbal-medicinal-products'},
+ley1581:{t:'Congreso de Colombia. Ley Estatutaria 1581 de 2012 – Protección de datos personales.',u:'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981'},
+resp:{t:'Zaccaro, A. et al. (2018). How breath-control can change your life: a systematic review on psycho-physiological correlates of slow breathing. Frontiers in Human Neuroscience, 12, 353.',u:'https://doi.org/10.3389/fnhum.2018.00353'},
+nist:{t:'NIST (2023). Artificial Intelligence Risk Management Framework (AI RMF 1.0).',u:'https://www.nist.gov/itl/ai-risk-management-framework'},
+ind5:{t:'Breque, M., De Nul, L., Petridis, A. (2021). Industry 5.0: Towards a sustainable, human-centric and resilient European industry. Comisión Europea.',u:'https://op.europa.eu/en/publication-detail/-/publication/468a892a-5097-11eb-b59f-01aa75ed71a1'}
+};
+const PLANTS={
+manzanilla:{n:'Manzanilla',lat:'Matricaria chamomilla L. (Asteraceae)',col:'#E9B949',bg:'#FFF1CF',art:'chamomile',inFill:true,
+ tag:'Parte del relleno',
+ carac:'Hierba anual de flores pequeñas con pétalos blancos y centro amarillo, muy aromática. Se usa la flor seca (capítulo floral).',
+ comp:['Flavonoides (p. ej., apigenina)','Aceite esencial con bisabolol y camazuleno','Mucílagos y cumarinas'],
+ trad:['Infusión tradicional después de las comidas o para “bajar la tensión”.','Uso externo tradicional en compresas tibias.'],
+ prep:['Infusión de flores secas en agua caliente tapada unos minutos (preparación casera habitual).','En el producto se usa como relleno vegetal para uso externo, no para ingerir.'],
+ evid:'Evidencia científica: los estudios sobre manzanilla y ansiedad, sueño o molestias digestivas son pocos, de calidad variable y con resultados mixtos. No hay evidencia suficiente para afirmar que trate o cure alguna enfermedad digestiva.',
+ prec:['Posible alergia en personas sensibles a plantas de la familia Asteraceae (artemisa, crisantemo, caléndula, ambrosía).','Se han descrito interacciones posibles con anticoagulantes: consultar al personal de salud si los usas.','Embarazo, lactancia y niños pequeños: consultar antes de usar infusiones.','Suspender si aparece picazón, enrojecimiento o dificultad para respirar.']},
+jengibre:{n:'Jengibre',lat:'Zingiber officinale Roscoe (Zingiberaceae)',col:'#C98A3A',bg:'#F8E4C4',art:'ginger',inFill:true,tag:'Parte del relleno',
+ carac:'Planta cuyo rizoma (tallo subterráneo) es aromático, picante y de sabor cálido. Se usa fresco o seco.',
+ comp:['Gingeroles y shogaoles (compuestos picantes)','Zingerona','Aceite esencial con terpenos'],
+ trad:['Infusión o masticación tradicional ante sensación de náusea o por su efecto “calentador”.','Condimento culinario muy extendido.'],
+ prep:['Rodajas frescas en infusión; polvo en preparaciones culinarias.','En VITALIS DIGEST es parte del relleno vegetal de uso externo.'],
+ evid:'Evidencia científica: es de las plantas con más estudios en náusea (embarazo, posoperatoria, quimioterapia), con resultados moderados y dependientes de la forma y la dosis; esas dosis no se recomiendan aquí. No sustituye valoración médica.',
+ prec:['Puede aumentar el riesgo de sangrado con anticoagulantes o antiagregantes: consultar al médico.','Puede causar acidez o malestar gástrico en algunas personas.','Precaución con cálculos biliares y antes de cirugías programadas.','En embarazo, usar solo con indicación de un profesional.','Posibles interacciones con medicamentos para diabetes o presión arterial: consultar.']},
+menta:{n:'Menta',lat:'Mentha × piperita L. (Lamiaceae)',col:'#1FB5A3',bg:'#DDF3EE',art:'mint',inFill:true,tag:'Parte del relleno',
+ carac:'Hierba perenne de hojas dentadas, muy aromática y de sensación fresca por su contenido de mentol.',
+ comp:['Mentol y mentona (aceite esencial)','Flavonoides (p. ej., luteolina)','Ácido rosmarínico'],
+ trad:['Infusión de hojas tras las comidas.','Aroma fresco usado tradicionalmente para sensación de “alivio” y frescura.'],
+ prep:['Infusión de hojas frescas o secas (uso tradicional).','Aceite esencial: es un producto concentrado, distinto de la infusión; no debe ingerirse ni aplicarse puro sin orientación profesional.'],
+ evid:'Evidencia científica: se han estudiado cápsulas de aceite de menta con cubierta entérica para síntomas del síndrome de intestino irritable, con resultados variables. Eso no es lo mismo que la infusión ni que un relleno textil, y no demuestra que VITALIS DIGEST trate esa condición.',
+ prec:['La menta puede empeorar reflujo o acidez en algunas personas.','El aceite esencial no debe aplicarse cerca de la cara de bebés o niños pequeños (riesgo respiratorio).','Evitar el aceite esencial concentrado sobre piel sin diluir: puede irritar.','Si tienes reflujo, hernia hiatal, cálculos biliares o alergias, consulta antes de usarla en infusión.']},
+lavanda:{n:'Lavanda',lat:'Lavandula angustifolia Mill. (Lamiaceae)',col:'#8E6FC4',bg:'#E9E0F7',art:'lavender',inFill:false,tag:'Contenido complementario · NO es parte del relleno',
+ carac:'Arbusto aromático de espigas violetas, apreciado por su perfume. En VITALIS es solo contenido educativo sobre relajación, no hace parte del relleno de la banda.',
+ comp:['Linalol y acetato de linalilo (aceite esencial)','Taninos y flavonoides'],
+ trad:['Uso aromático tradicional en rutinas de descanso (sachets, almohadas aromáticas).','Infusiones y baños aromáticos en distintas culturas.'],
+ prep:['Aromático: unas gotas de aceite esencial en difusor, o sachet de flores secas junto a la almohada.','Ingestión: no se recomienda improvisar; existen preparados estandarizados que solo se usan con indicación profesional.'],
+ evid:'Evidencia científica: hay estudios sobre aromaterapia con lavanda y ansiedad o sueño con resultados prometedores pero heterogéneos; la calidad es variable. Se considera una ayuda para la rutina de relajación, no un tratamiento.',
+ prec:['Aceite esencial: no ingerir; diluir siempre antes de contacto con la piel; puede causar irritación o alergia.','Mantener fuera del alcance de niños y mascotas (puede ser tóxico para gatos).','Embarazo y lactancia: consultar antes de usar aceites esenciales.','Uso externo ≠ aromático ≠ ingestión: cada vía tiene riesgos distintos.']}
+};
+const COMPARE=[['Parte usada','Flor seca','Rizoma','Hoja'],['Aroma','Dulce, herbal','Cálido, picante','Fresco, mentolado'],['Compuestos de interés','Apigenina, bisabolol','Gingeroles, shogaoles','Mentol, mentona'],['Uso tradicional','Infusión relajante','Infusión ante náusea','Infusión tras comidas'],['Calidad de la evidencia','Limitada / mixta','Moderada solo en náusea','Variable (aceite entérico)'],['Precaución principal','Alergia a Asteraceae; anticoagulantes','Anticoagulantes; acidez','Reflujo; aceite esencial']];
+const EXS=[
+{id:'dia',n:'Respiración diafragmática suave',goal:'Llevar el aire hacia el abdomen de forma tranquila, soltando la tensión del cuello y los hombros.',ph:[['Inhala por la nariz',4],['Pausa breve',1],['Exhala suave',6]],tag:'Suave · principiantes',obj:['relajar','molestia'],mom:['dia','tarde'],how:['Siéntate o recuéstate cómodo, una mano sobre el abdomen.','Inhala por la nariz y siente que el abdomen se eleva suavemente.','Haz una pausa muy breve (1 s) sin forzar.','Exhala lento por la boca o la nariz. Sin esfuerzo.']},
+{id:'lenta',n:'Respiración lenta y consciente',goal:'Marcar un ritmo parejo y calmado para enfocar la atención en el presente.',ph:[['Inhala',5],['Exhala',5]],tag:'Ritmo parejo · sin pausas',obj:['relajar','aprender'],mom:['dia','tarde','noche'],how:['Cuenta mentalmente hasta 5 al inhalar.','Cuenta hasta 5 al exhalar, sin vaciarte del todo.','Si la mente se va, vuelve con amabilidad al conteo.','No fuerces: si no alcanzas, acorta los tiempos.']},
+{id:'sueno',n:'Respiración de relajación antes de dormir',goal:'Alargar la exhalación para acompañar la transición al descanso.',ph:[['Inhala',4],['Pausa breve',1],['Exhala larga',7]],tag:'Noche · exhalación larga',obj:['dormir','relajar'],mom:['noche'],how:['Recuéstate con luz baja y pantallas lejos.','Inhala 4 tiempos por la nariz.','Pausa breve de 1 tiempo.','Exhala 7 tiempos muy suave. Repite sin prisa.']}];
+const MOODS=[['bien','Me siento bien','#1FB5A3'],['relax','Necesito relajarme','#8E6FC4'],['molestia','Tengo molestias leves','#E9B949'],['respira','Quiero realizar un ejercicio de respiración','#17745A'],['aprender','Quiero aprender algo nuevo','#FF6B4A']];
+const ACTS=['Ejercicio de respiración','Descanso / pausa','Infusión tradicional (según tu criterio)','Caminata suave','Leer en VITALIS','Calor externo suave','Otra'];
+const ARTS=[
+{id:'a1',cat:'Plantas',t:'Tradición vs. evidencia: cómo leer una afirmación sobre plantas',s:'Qué significa “se usa tradicionalmente” y qué significa “probado en estudios”.',art:'chamomile',b:['Que una planta se use desde hace siglos no demuestra por sí solo que funcione ni que sea segura para todos. Es una pista, no una prueba.','Un estudio científico sólido compara contra un grupo de control, tiene suficientes personas y mide resultados claros. Muchos estudios sobre plantas son pequeños o usan preparados distintos entre sí.','En VITALIS separamos siempre dos cosas: lo que se hace tradicionalmente y lo que la evidencia respalda. Si no hay evidencia suficiente, lo decimos.'],r:['nccih_cham','who']},
+{id:'a2',cat:'Plantas',t:'Infusión no es lo mismo que aceite esencial',s:'Dos preparados de la misma planta con riesgos y usos muy diferentes.',art:'mint',b:['La infusión es agua con hojas o flores: contiene pocas cantidades de compuestos aromáticos.','El aceite esencial es un extracto muy concentrado. Una gota equivale a mucha cantidad de planta, por eso se necesita cuidado: no se ingiere ni se aplica puro sin orientación profesional.','Los estudios hechos con aceite esencial o cápsulas estandarizadas no se pueden trasladar a una infusión casera, ni al relleno de una banda.'],r:['nccih_pep','ema']},
+{id:'a3',cat:'Plantas',t:'Lavanda: aroma para el descanso, no relleno de la banda',s:'Por qué la lavanda aparece aquí como contenido complementario.',art:'lavender',b:['La lavanda se usa tradicionalmente por su aroma en rutinas de descanso.','En VITALIS DIGEST el relleno es manzanilla, jengibre y menta. La lavanda NO hace parte del producto.','Si la usas en aroma, hazlo con moderación, buena ventilación y cuidado con niños y mascotas.'],r:['nccih_lav']},
+{id:'a4',cat:'Bienestar digestivo',t:'Comer con calma: el primer paso del bienestar digestivo',s:'Hábitos simples de alimentación consciente.',art:'ginger',b:['Masticar despacio, sentarse a comer y evitar pantallas ayuda a reconocer la saciedad.','Cada persona identifica sus propios desencadenantes: llevar un registro en Mi experiencia puede ayudarte a notarlos.','Si las molestias son frecuentes o persistentes, lo adecuado es una valoración profesional, no probar remedios al azar.'],r:['who']},
+{id:'a5',cat:'Bienestar digestivo',t:'Calor externo suave: qué es y qué precauciones tiene',s:'Una idea general sobre el uso responsable del calor sobre el abdomen.',art:'chamomile',b:['El calor externo suave es un recurso tradicional de confort. No es un tratamiento.','Siempre debe sentirse agradable, nunca quemar. Si hay enrojecimiento, dolor o ardor, se retira.','Para VITALIS DIGEST, los parámetros específicos (temperatura, tiempos) están pendientes de validación técnica; no se publican cifras inventadas.'],r:['who']},
+{id:'a6',cat:'Respiración',t:'Por qué exhalar más largo calma',s:'Idea general detrás de la respiración lenta.',art:'mint',b:['Revisiones científicas describen que respirar lento (alrededor de 6 respiraciones por minuto) se asocia con sensación de calma en personas sanas; la calidad y el tamaño de los estudios varían.','Lo importante es la comodidad: sin forzar, sin retener el aire por mucho tiempo y deteniéndote si te mareas.'],r:['resp']},
+{id:'a7',cat:'Respiración',t:'Cuándo detener un ejercicio de respiración',s:'Señales para parar y respirar normal.',art:'ginger',b:['Mareo, hormigueo, falta de aire o incomodidad: detén el ejercicio y respira con normalidad.','Si estas sensaciones se repiten, consulta a un profesional de salud.','Las personas con enfermedades respiratorias o cardiovasculares deben consultar antes de practicar ejercicios guiados.'],r:['resp']},
+{id:'a8',cat:'Relajación',t:'Una pausa de 3 minutos para el final del día',s:'Una rutina breve y realista.',art:'lavender',b:['1) Baja la luz y deja el celular a un lado.','2) Haz 3 minutos de respiración lenta y consciente con VITALIS.','3) Anota en Mi experiencia cómo te sentiste antes y después.'],r:['resp']},
+{id:'a9',cat:'Relajación',t:'Rutina nocturna: señales que ayudan al descanso',s:'Hábitos de higiene del sueño de uso general.',art:'lavender',b:['Horarios regulares, luz baja, habitación cómoda y menos pantallas ayudan al descanso.','Si el insomnio es frecuente, consulta a un profesional.'],r:['who']},
+{id:'a10',cat:'Hábitos saludables',t:'Hidratación sin extremos',s:'Tomar agua a lo largo del día, de forma tranquila.',art:'mint',b:['Beber agua a sorbos durante el día suele ser más cómodo que tomar mucho de golpe.','Las necesidades varían según clima, actividad y salud; ante enfermedades renales, cardíacas u otras, sigue las indicaciones de tu médico.'],r:['who']},
+{id:'a11',cat:'Hábitos saludables',t:'Uso responsable de plantas',s:'Cinco reglas antes de probar una planta.',art:'chamomile',b:['1) Consulta si tomas medicamentos, estás embarazada o tienes una enfermedad crónica.','2) No uses plantas para reemplazar un tratamiento indicado.','3) Compra productos de origen conocido.','4) Prueba una sola cosa nueva a la vez.','5) Suspende ante cualquier reacción y consulta.'],r:['ema','nccih_cham']},
+{id:'a12',cat:'Hábitos saludables',t:'Tu privacidad en VITALIS SMART CARE',s:'Qué se guarda, dónde y cómo borrarlo.',art:'ginger',b:['Los registros de Mi experiencia se guardan solo en este navegador (almacenamiento local). No hay cuentas ni servidor en esta versión.','Puedes borrarlos cuando quieras. Evita escribir datos personales o clínicos en las notas.','Si en el futuro se agregan cuentas o servidores, se tratarán conforme a la Ley 1581 de 2012 con autorización previa.'],r:['ley1581']}
+];
+const ARTCATS=['Todas','Plantas','Bienestar digestivo','Respiración','Relajación','Hábitos saludables'];
+const FAQ=[
+['¿Qué es VITALIS DIGEST?','Es una banda térmica abdominal natural y reutilizable, de uso externo, con relleno vegetal de manzanilla, jengibre y menta. Está pensada para acompañar momentos de pausa y confort. No es un medicamento.','producto'],
+['¿Cómo funciona la banda?','La banda se calienta de forma suave y se ajusta sobre el abdomen, aportando calor externo y el aroma de sus plantas. El método y los parámetros exactos de calentamiento están pendientes de validación técnica y no se publican cifras sin validar.','producto'],
+['¿Qué plantas contiene?','Manzanilla, jengibre y menta. Puedes ver la ficha de cada una en el Jardín botánico.','plantas'],
+['¿La lavanda hace parte del producto?','No. La lavanda se presenta solo como contenido educativo complementario sobre relajación; no es parte del relleno de VITALIS DIGEST.','plantas'],
+['¿Cómo se utiliza?','De forma general: sobre la piel íntegra o sobre una capa de ropa fina, con calor agradable (nunca ardiente), en una posición cómoda, sin dormirte con ella y retirándola ante cualquier molestia. Las instrucciones oficiales del producto se publicarán al finalizar su validación técnica.','seguridad'],
+['¿Puedo utilizarla todos los días?','No hay una recomendación validada todavía sobre frecuencia o duración de uso: es un dato pendiente de validación técnica. Mientras tanto, lo prudente es escuchar a tu cuerpo y consultar a un profesional si tienes dudas o condiciones de salud.','seguridad'],
+['¿Es un medicamento?','No. VITALIS DIGEST no es un medicamento ni un dispositivo para tratar enfermedades. Es un producto de bienestar y confort de uso externo.','seguridad'],
+['¿Puede reemplazar una consulta médica?','No. Ni la banda ni SMART CARE reemplazan la valoración de un profesional de la salud. Ante molestias persistentes o signos de alarma, consulta.','seguridad'],
+['¿Qué puedo hacer si siento dolor intenso?','El dolor intenso o repentino, la fiebre, los vómitos persistentes, el desmayo o el sangrado inusual requieren valoración médica. No lo manejes solo con la banda ni con remedios naturales: acude a urgencias o a tu servicio de salud.','habitos'],
+['¿Cómo accedo a SMART CARE?','Estás en él: esta plataforma web es VITALIS SMART CARE. En el producto físico habrá un código QR que llevará a ella. No necesitas instalar nada ni crear una cuenta.','inicio'],
+['¿Mis registros son privados?','Sí, en esta versión: se guardan solo en tu navegador, sin cuenta y sin enviarse a ningún servidor. Puedes borrarlos desde Mi experiencia. Evita escribir datos personales o clínicos.','experiencia']];
+const TIPS_ABD=[['Busca una posición cómoda','Recuéstate o siéntate con las rodillas ligeramente flexionadas; afloja la ropa ajustada.'],['Descansa','Haz una pausa y evita esfuerzos mientras te sientas incómodo.'],['Mantén una hidratación adecuada','Sorbos de agua a lo largo del rato, sin forzarte.'],['Evita lo que sepas que te cae mal','Si has identificado alimentos desencadenantes, evítalos por ahora.'],['Considera calor externo suave','Solo si es apropiado para ti, que se sienta agradable y sin dormirte con él.'],['Respira con calma','Prueba la respiración diafragmática suave en el módulo Respira.'],['Observa cómo evoluciona','Si empeora o aparece algún signo de alarma, busca atención profesional.']];
+const ALARMS=['Dolor intenso o repentino','Fiebre','Vómitos persistentes','Desmayo o mareo fuerte','Sangrado inusual (vómito o heces con sangre, sangrado vaginal fuera de lo habitual)','Abdomen duro, muy hinchado o muy sensible al tacto','Empeoramiento progresivo de los síntomas'];
+const HABITS=[['Alimentación consciente','Come sin prisa, mastica bien, sin pantallas. Observa cómo te sientes después de cada comida.'],['Hidratación','Toma agua a sorbos durante el día. Si tienes una enfermedad que limite líquidos, sigue a tu médico.'],['Descanso','Horarios regulares de sueño y pausas cortas durante el día.'],['Manejo del estrés','Pausas de respiración, caminar, hablar con alguien de confianza. Si el estrés te sobrepasa, busca apoyo profesional.'],['Rutinas de relajación','Combina luz baja, respiración lenta y música suave 5–10 minutos antes de dormir.'],['Infusiones tradicionales','Son una costumbre cultural, no un tratamiento. Consulta antes si tomas medicamentos, estás embarazada o tienes una condición de salud. No se dan dosis en esta plataforma.'],['Uso responsable de plantas','Una cosa nueva a la vez, producto de origen conocido, y suspende ante cualquier reacción.'],['Hábitos que favorecen el bienestar digestivo','Comidas regulares, fibra gradual, movimiento suave y registrar qué te sienta bien o mal.'],['Cuidados durante episodios de malestar','Reposo, hidratación, observar la evolución y consultar cuando haya signos de alarma o persistencia.']];
+const PENDING=[['Método de calentamiento de la banda','Por validar'],['Temperatura máxima en superficie','Por validar'],['Tiempo máximo y frecuencia de uso','Por validar'],['Tela exterior y certificaciones de materiales','Por validar'],['Tallas, peso y dimensiones finales','Por validar'],['Número de usos / vida útil','Por validar'],['Instrucciones de lavado y conservación','Por validar'],['Ensayos de seguridad con usuarios y concepto profesional','Por validar'],['Registro/normativa sanitaria aplicable al producto','Por validar con asesoría']];
+const DONE=[['Concepto de producto: banda térmica natural reutilizable de uso externo','Definido'],['Relleno vegetal: manzanilla, jengibre y menta','Definido'],['Lavanda: solo contenido educativo complementario','Definido'],['Código QR hacia SMART CARE','Definido (concepto)'],['Prototipo web: reglas de seguridad, respiración, registro, patrones del diario y asistente con recuperación BM25 (RAG) y fuentes visibles','Implementado en esta versión'],['LLM + RAG: función serverless lista (netlify/functions); activo solo si se configura la clave en Netlify','Implementado en código · activo solo si hay clave'],['Modelo de IA entrenado con datos reales','No existe']];
+/* ===== Base del asistente (palabras clave, no es IA generativa) ===== */
+const KB=[
+{k:['que es vitalis','vitalis digest','banda','que es la banda'],a:'<b>VITALIS DIGEST</b> es una banda térmica abdominal natural y reutilizable, de uso externo, con relleno de manzanilla, jengibre y menta. No es un medicamento.',l:['producto']},
+{k:['como funciona','funciona','calor','calentar','calienta'],a:'La banda aporta calor externo suave y el aroma de sus plantas. El método y los parámetros exactos de calentamiento (temperatura, tiempos) <b>están pendientes de validación técnica</b>, por eso no te doy cifras.',l:['producto','seguridad']},
+{k:['planta','plantas','contiene','relleno','ingrediente'],a:'El relleno tiene <b>manzanilla, jengibre y menta</b>. La lavanda NO es parte del relleno; se explica aparte como contenido complementario.',l:['plantas']},
+{k:['manzanilla'],a:'La manzanilla se usa tradicionalmente en infusión. La evidencia científica sobre sus efectos es limitada y mixta. Precaución si eres alérgico a plantas de la familia Asteraceae o tomas anticoagulantes.',l:['plantas']},
+{k:['jengibre'],a:'El jengibre es un rizoma aromático; la evidencia más estudiada se refiere a la náusea. Puede interactuar con anticoagulantes y causar acidez en algunas personas. No doy dosis.',l:['plantas']},
+{k:['menta','mentol','peppermint'],a:'La menta aporta mentol y aroma fresco. Puede empeorar el reflujo en algunas personas. La infusión y el aceite esencial son cosas distintas: el aceite concentrado requiere mucho cuidado.',l:['plantas']},
+{k:['lavanda','hace parte'],a:'La lavanda es una planta <b>complementaria</b>: se usa tradicionalmente en aroma para relajación. No hace parte del relleno de VITALIS DIGEST. El aceite esencial no se ingiere.',l:['plantas']},
+{k:['usar','uso','utilizar','aplicar','como se usa','poner'],a:'De forma general: sobre piel íntegra o ropa fina, con calor agradable, en posición cómoda, sin dormirte con ella, y retírala si hay molestia. Las instrucciones oficiales se publicarán al validar el producto.',l:['seguridad','producto']},
+{k:['cuanto tiempo','cuanto dura','tiempo de uso','cada dia','todos los dias','frecuencia','minutos'],a:'No hay todavía un tiempo ni una frecuencia de uso validados; es un dato <b>pendiente de validación técnica</b> y no lo voy a inventar. Escucha a tu cuerpo y consulta a un profesional si tienes dudas.',l:['seguridad']},
+{k:['respiracion','respirar','respira','ansiedad','calma','relajar','relajacion','estres'],a:'En el módulo <b>Respira</b> hay tres ejercicios suaves (diafragmática, lenta y consciente, y antes de dormir) con círculo guiado, temporizador y contador de ciclos. Puedes detenerlos cuando quieras.',l:['respira']},
+{k:['dormir','sueno','insomnio','descanso','noche'],a:'Para la noche tienes la <b>respiración de relajación antes de dormir</b> con exhalación larga y sin retenciones. Si el insomnio es frecuente, consulta a un profesional.',l:['respira','habitos']},
+{k:['habito','habitos','hidratacion','agua','alimentacion','comer','bienestar'],a:'En <b>Bienestar natural</b> hay hábitos de alimentación consciente, hidratación, descanso, manejo del estrés y uso responsable de plantas.',l:['habitos','aprende']},
+{k:['molestia','molestias','abdominal','barriga','estomago','digestion','digestivo','hinchazon','colicos','colico'],a:'Para molestias leves: posición cómoda, descanso, hidratación a sorbos, evitar lo que sepas que te cae mal y, si es apropiado, calor externo suave. Revisa los <b>signos de alarma</b> en Bienestar natural. Si persisten o empeoran, consulta.',l:['habitos']},
+{k:['medicamento','es un medicamento','cura','curar','sana','tratamiento','tratar'],a:'<b>No.</b> VITALIS DIGEST no es un medicamento y no cura ni trata enfermedades. Es un producto de bienestar y confort de uso externo.',l:['seguridad']},
+{k:['medico','doctor','consulta','reemplaza','profesional'],a:'Ni la banda ni SMART CARE reemplazan la consulta con personal de salud. Si tienes dolor persistente, condiciones de salud o dudas, consulta a un profesional.',l:['seguridad']},
+{k:['precaucion','precauciones','cuidado','cuidados','seguridad','contraindic','embarazo','embarazada','lactancia','alergia','alergico'],a:'Embarazo, lactancia, alergias a plantas, diabetes o piel con sensibilidad reducida, y uso de anticoagulantes: <b>consulta antes</b>. No uses la banda sobre piel lesionada y retírala si hay enrojecimiento, ardor o dolor.',l:['seguridad']},
+{k:['conservar','conservacion','lavar','lavado','limpiar','guardar'],a:'Las instrucciones de lavado y conservación del producto están <b>pendientes de validación</b>; no te doy indicaciones inventadas. Se publicarán con la ficha técnica final.',l:['producto','seguridad']},
+{k:['smart care','qr','plataforma','app','aplicacion','acceder'],a:'Estás en <b>VITALIS SMART CARE</b>. En el producto habrá un QR que lleva aquí. No necesita instalación ni cuenta.',l:['inicio']},
+{k:['privacidad','privado','datos','registro','registros','guardan'],a:'Tus registros se guardan <b>solo en este navegador</b>, sin cuenta ni servidor. Puedes borrarlos desde Mi experiencia. Evita escribir datos personales.',l:['experiencia']},
+{k:['ia','inteligencia artificial','chatgpt','modelo','robot','eres'],a:'Combino <b>reglas de seguridad, recuperación de contenidos (RAG) y respuestas preparadas</b>. Un modelo de lenguaje (LLM) solo participa si el servidor está conectado; el estado se muestra en el módulo Asistente. Nunca diagnostico ni receto.',l:['seguridad']},
+{k:['precio','comprar','compra','venta','cuanto cuesta','pedido','contacto','whatsapp'],a:'Para información comercial puedes escribirnos por WhatsApp. Este es un proyecto académico en desarrollo; no hay tienda en línea en esta plataforma.',l:[],wa:true},
+{k:['hola','buenas','buenos dias','buenas tardes','buenas noches','hey'],a:'¡Hola! Soy el asistente de VITALIS SMART CARE. Puedo orientarte sobre el producto, las plantas, la respiración y hábitos generales. ¿Qué te gustaría saber?',l:[]},
+{k:['gracias','chao','adios'],a:'¡Con gusto! Cuídate y haz una pausa cuando la necesites.',l:[]}
+];
+const SUGG=['¿Qué es VITALIS DIGEST?','¿Qué plantas contiene?','¿La lavanda hace parte del producto?','¿Cómo hago un ejercicio de respiración?','¿Qué hago si tengo molestias abdominales?','¿Es un medicamento?','¿Cuánto tiempo puedo usarla?','¿Mis registros son privados?'];
+const SAFE_ALARM=['dolor intenso','dolor muy fuerte','dolor fuerte','repentino','fiebre','vomito','vomitos','desmayo','desmaye','sangre','sangrado','sangro','no puedo respirar','falta de aire','pecho','abdomen duro','emergencia','urgencia'];
+const SAFE_MED=['que pastilla','que medicamento','dosis','cuantas pastillas','que me tomo','que debo tomar','receta','antibiotico','ibuprofeno','acetaminofen','naproxeno','diagnostic','que enfermedad tengo','tengo gastritis','tengo colon','tengo endometriosis','tengo cancer','mg'];
+
+(function(){
+'use strict';
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}};
+let toastT;function toast(m){const o=$('.toast');if(o)o.remove();const t=document.createElement('div');t.className='toast';t.setAttribute('role','status');t.textContent=m;document.body.appendChild(t);clearTimeout(toastT);toastT=setTimeout(()=>t.remove(),2800)}
+/* ---------- logo, WhatsApp ---------- */
+$('#logoart').innerHTML=ART.logo();
+$$('[data-wa]').forEach(a=>{a.href=WA_URL;a.target='_blank';a.rel='noopener'});
+/* ---------- tema ---------- */
+(function(){const t=store.get('vt_theme',null);if(t)document.documentElement.setAttribute('data-theme',t);
+$('#theme').onclick=()=>{const cur=document.documentElement.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');const n=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',n);store.set('vt_theme',n)}})();
+/* ---------- navegación ---------- */
+const nav=$('#nav');nav.innerHTML=MODS.map(m=>`<a href="#${m[0]}" data-m="${m[0]}">${m[1]}</a>`).join('');
+$('#burger').onclick=()=>{const o=nav.classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)};
+let visited=new Set(store.get('vt_vis',[]));
+function route(){let h=(location.hash||'#inicio').slice(1);if(!MODS.find(m=>m[0]===h))h='inicio';
+$$('section.mod').forEach(s=>s.hidden=s.id!=='m-'+h);
+$$('nav.main a').forEach(a=>a.getAttribute('data-m')===h?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+nav.classList.remove('open');$('#burger').setAttribute('aria-expanded','false');
+const AC={inicio:['#17745A','#1FB5A3'],producto:['#0B3D2E','#17745A'],plantas:['#C98A3A','#E9B949'],respira:['#0F8C7C','#1FB5A3'],habitos:['#E5532F','#FF9A5C'],experiencia:['#6B4FA8','#8E6FC4'],asistente:['#0B3D2E','#1FB5A3'],aprende:['#D99A1E','#FF6B4A'],seguridad:['#B3382E','#FF6B4A'],faq:['#6B4FA8','#1FB5A3']};const ac=AC[h];const se=$('#m-'+h);se.style.setProperty('--acc',ac[0]);se.style.setProperty('--acc2',ac[1]);
+document.title='VITALIS SMART CARE · '+MODS.find(m=>m[0]===h)[1];
+visited.add(h);store.set('vt_vis',[...visited]);updVisited();
+if(h!=='respira')bStop(true);
+if(h==='experiencia')renderExp();
+window.scrollTo(0,0);$('#main').focus({preventScroll:true})}
+function updVisited(){const n=visited.size;const v=$('#visited');if(v)v.textContent=n;const p=$('#visprog');if(p)p.style.width=(n/10*100)+'%'}
+addEventListener('hashchange',route);
+addEventListener('scroll',()=>{const d=document.documentElement;$('#pgbar').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight||1)*100)+'%'},{passive:true});
+$('#reflink').addEventListener('click',()=>setTimeout(()=>{const r=$('#refs');if(r)r.scrollIntoView({behavior:'smooth'})},80));
+/* ---------- inicio ---------- */
+$('#heroart').innerHTML=`<div style="position:relative;width:min(440px,100%)">${ART.band()}<div style="display:flex;justify-content:space-around;margin-top:-6px"><div style="width:26%;animation:fl 7s ease-in-out infinite">${ART.chamomile()}</div><div style="width:26%;animation:fl 8s ease-in-out infinite .6s">${ART.ginger()}</div><div style="width:26%;animation:fl 9s ease-in-out infinite 1.2s">${ART.mint()}</div></div></div>`;
+$('#floaters').innerHTML=[['4%','12%',70,'mint',0],['90%','60%',60,'chamomile',2],['46%','80%',54,'lavender',4]].map(f=>`<div class="float" style="left:${f[0]};top:${f[1]};width:${f[2]}px;animation-delay:${f[4]}s;opacity:.35">${ART[f[3]]()}</div>`).join('');
+$('#homeplants').innerHTML=['manzanilla','jengibre','menta'].map(k=>{const p=PLANTS[k];return `<button class="card hv plant" data-plant="${k}" style="text-align:left;padding:0"><div class="art" style="background:${p.bg}">${ART[p.art]()}</div><div class="tx"><h3>${p.n}</h3><div class="lat">${p.lat}</div><p style="font-size:14px;margin-top:6px">${esc(p.carac)}</p></div></button>`}).join('');
+const ICO=['#0B3D2E','#17745A','#8E6FC4','#1FB5A3','#C98A3A','#FF6B4A','#0B3D2E','#E9B949','#17745A','#8E6FC4'];
+$('#modgrid').innerHTML=MODS.slice(1).map((m,i)=>`<a class="card hv mcard" href="#${m[0]}"><span class="num">${String(i+2).padStart(2,'0')}</span><div class="ic" style="background:${ICO[i]}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3C7 8 7 14 12 21c5-7 5-13 0-18z"/></svg></div><h3>${m[1]}</h3><p style="font-size:14px;color:var(--muted);margin:0">${['Banda térmica, partes y ficha','Manzanilla, jengibre, menta y lavanda','Respiración guiada con temporizador','Hábitos y signos de alarma','Tu diario de bienestar','Preguntas por palabras clave','Artículos y referencias','Precauciones y transparencia','Respuestas rápidas'][i]}</p></a>`).join('');
+/* ---------- modales ---------- */
+let lastFocus=null;
+function openModal(html){lastFocus=document.activeElement;$('#mbox').innerHTML=html;$('#modal').classList.add('open');document.body.style.overflow='hidden';const x=$('#mbox .x');if(x)x.focus()}
+function closeModal(){$('#modal').classList.remove('open');document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus()}
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal'||e.target.closest('.x'))closeModal()});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#modal').classList.contains('open'))closeModal()});
+function plantModal(k){const p=PLANTS[k];const L=a=>'<ul>'+a.map(x=>`<li>${esc(x)}</li>`).join('')+'</ul>';
+openModal(`<div class="mhead" style="background:linear-gradient(135deg,${p.col}dd,#0B3D2E)"><div style="width:110px;flex:none">${ART[p.art]()}</div><div><span class="chip ${p.inFill?'':'y'}" style="background:#fff9">${p.tag}</span><h2 id="mtitle">${p.n}</h2><i style="color:#fff">${p.lat}</i></div><button class="x" aria-label="Cerrar ficha">×</button></div>
+<div class="mbody">${p.inFill?'':'<div class="notice"><b>Contenido complementario.</b> La lavanda NO es parte del relleno de VITALIS DIGEST.</div>'}
+<h3>Características</h3><p>${esc(p.carac)}</p><h3>Componentes de interés</h3>${L(p.comp)}<h3>Usos tradicionales</h3>${L(p.trad)}<h3>Formas habituales de preparación</h3>${L(p.prep)}
+<h3>Tradición vs. evidencia científica</h3><div class="notice green">${esc(p.evid)}</div><h3>Cuidados y precauciones</h3>${L(p.prec)}
+<div class="notice red">Información educativa. No es un tratamiento, no diagnostica ni reemplaza la consulta con personal de salud. No se indican dosis.</div>
+<p><button class="btn g s" data-ask="${esc('Cuéntame sobre '+p.n.toLowerCase())}">Preguntar al asistente</button></p></div>`)}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-plant]');if(b){plantModal(b.dataset.plant)}
+const a=e.target.closest('[data-ask]');if(a){closeModal();location.hash='#asistente';setTimeout(()=>ask(a.dataset.ask),150)}});
+/* ---------- jardín ---------- */
+$('#garden').innerHTML=Object.keys(PLANTS).map(k=>{const p=PLANTS[k];return `<button class="plant" data-plant="${k}" aria-label="Abrir ficha de ${p.n}"><div class="art" style="background:${p.bg}">${ART[p.art]()}</div><div class="tx"><span class="chip ${p.inFill?'':'y'}">${p.tag}</span><h3 style="margin-top:8px">${p.n}</h3><div class="lat">${p.lat}</div><p style="font-size:14px;margin:6px 0 0;color:var(--muted)">Toca para abrir la ficha →</p></div></button>`}).join('');
+$('#cmp').innerHTML=`<thead><tr><th></th><th>Manzanilla</th><th>Jengibre</th><th>Menta</th></tr></thead><tbody>${COMPARE.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td></tr>`).join('')}</tbody>`;
+/* ---------- producto ---------- */
+$('#bandart').innerHTML=ART.band();
+const PARTS={'band-body':['Textil exterior','Es la cubierta que envuelve el relleno. Material, composición y acabado definitivos: <span class="chip y">por validar</span>.'],'band-fill':['Relleno vegetal','Compartimentos con manzanilla, jengibre y menta. Cantidades y proporciones: <span class="chip y">por validar</span>. Uso externo, no para ingerir.'],'band-strap-l':['Ajuste ergonómico','Correas ajustables para sujetar la banda sobre el abdomen. Tipo de cierre y tallas: <span class="chip y">por validar</span>.'],'band-strap-r':['Ajuste ergonómico','Correas ajustables para sujetar la banda sobre el abdomen. Tipo de cierre y tallas: <span class="chip y">por validar</span>.'],'band-qr':['Etiqueta QR → SMART CARE','Código QR que lleva a esta plataforma: respiración, hábitos y asistente. Ubicación e impresión definitivas: <span class="chip y">por validar</span>.'],'band-logo':['Marca VITALIS','Identidad de la marca. Calor que cuida, naturaleza que alivia.']};
+function showPart(id){const p=PARTS[id];if(!p)return;$('#bandinfo').innerHTML=`<b>${p[0]}</b><br>${p[1]}`;$$('#bandart [id^=band-]').forEach(g=>g.style.filter=g.id===id?'drop-shadow(0 0 6px #E9B949)':'none');$$('#bandchips .opt').forEach(c=>c.setAttribute('aria-pressed',c.dataset.p===id))}
+$$('#bandart [id^=band-]').forEach(g=>{g.classList.add('hot');g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-label',PARTS[g.id][0]);g.addEventListener('click',()=>showPart(g.id));g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPart(g.id)}})});
+$('#bandchips').innerHTML=[['band-body','Textil'],['band-fill','Relleno'],['band-strap-l','Ajuste'],['band-qr','QR']].map(c=>`<button class="opt" data-p="${c[0]}" aria-pressed="false">${c[1]}</button>`).join('');
+$('#bandchips').addEventListener('click',e=>{const b=e.target.closest('[data-p]');if(b)showPart(b.dataset.p)});
+const PT={que:['¿Qué es?',`<p><b>VITALIS DIGEST</b> es una banda térmica abdominal natural, <b>reutilizable</b> y de <b>uso externo</b>, con relleno de manzanilla, jengibre y menta. Está pensada como acompañamiento de bienestar y confort. <b>No es un medicamento.</b></p><p>Concepto: <i>“La banda abraza, el QR escucha”</i>.</p>`],
+como:['¿Cómo funciona?',`<p>La banda aporta <b>calor externo suave</b> y el aroma de sus plantas mientras estás en reposo. Un QR en la banda lleva a SMART CARE para acompañarte con respiración guiada y hábitos.</p><div class="notice"><b>Cómo se aplica el calor:</b> el método de calentamiento y la temperatura son <span class="chip y">pendientes de validación técnica</span>. No se publican cifras sin validar.</div>`],
+uso:['Uso correcto',`<ol><li>Revisa que la banda esté en buen estado y sin daños.</li><li>Verifica que el calor sea agradable antes de colocarla.</li><li>Colócala sobre la piel íntegra o sobre una capa de ropa fina, en posición cómoda.</li><li>Retírala si hay ardor, enrojecimiento, dolor o malestar.</li><li>No te duermas con ella puesta.</li></ol><div class="notice"><b>¿Cuánto tiempo?</b> Tiempo y frecuencia de uso: <span class="chip y">pendientes de validación técnica</span>. Seguiremos las instrucciones de seguridad que se definan para el producto.</div>`],
+cuid:['Cuidados y conservación',`<p>Lavado, secado, almacenamiento y vida útil: <span class="chip y">por validar</span>. Mientras tanto, regla general: mantener seca y limpia, lejos de fuentes de calor excesivo, humedad y de niños sin supervisión.</p>`],
+prec:['Precauciones',`<ul><li>No usar sobre piel lesionada o con irritación.</li><li>Consultar antes si estás embarazada, tomas anticoagulantes o tienes alergias a las plantas del relleno.</li><li>No sustituye atención médica: ante dolor intenso, fiebre, vómitos persistentes, desmayo o sangrado inusual, busca valoración.</li></ul>`]};
+$('#ptabs').innerHTML=Object.keys(PT).map((k,i)=>`<button class="tab" role="tab" data-t="${k}" aria-pressed="${i===0}">${PT[k][0]}</button>`).join('');
+function showTab(k){$$('#ptabs .tab').forEach(t=>t.setAttribute('aria-pressed',t.dataset.t===k));$('#pbody').innerHTML=`<h3>${PT[k][0]}</h3>${PT[k][1]}`}
+$('#ptabs').addEventListener('click',e=>{const t=e.target.closest('[data-t]');if(t)showTab(t.dataset.t)});showTab('que');
+$('#ficha').innerHTML=[['Tipo','Banda térmica abdominal natural, reutilizable, de uso externo','Definido'],['Relleno','Manzanilla, jengibre y menta','Definido'],['Materiales (tela, costuras, cierre)','Sin definir','Por validar'],['Aplicación de calor','Método y temperatura sin definir','Por validar'],['Beneficios esperados','Confort, sensación de calor y aroma, acompañamiento de una pausa de bienestar. No se prometen efectos terapéuticos','Definido (alcance)'],['Recomendaciones de uso','Generales de seguridad; específicas por validar','Parcial'],['Tallas / dimensiones','Sin definir','Por validar']].map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td><span class="chip ${r[2].startsWith('Por')||r[2]==='Parcial'?'y':''}">${r[2]}</span></td></tr>`).join('');
+const li=(a)=>a.map(r=>`<div class="hi"><span>${r[0]}</span><span class="chip ${/Por|Proyect|No existe/.test(r[1])?'y':''}">${r[1]}</span></div>`).join('');
+$('#doneList').innerHTML=li(DONE);$('#pendList').innerHTML=li(PENDING);
+$('#transp').innerHTML=DONE.map(r=>`<tr><td>${r[0]}</td><td><span class="chip ${/Proyect|No existe/.test(r[1])?'y':''}">${r[1]}</span></td></tr>`).join('');
+/* ---------- hábitos ---------- */
+$('#habacc').innerHTML=HABITS.map(h=>`<details><summary>${h[0]}</summary><div class="in" style="border:0">${esc(h[1])}</div></details>`).join('');
+const tipsDone=new Set();function updTips(){const n=tipsDone.size;$('#tipprog').style.width=(n/TIPS_ABD.length*100)+'%';$('#tipcount').textContent=n+' de '+TIPS_ABD.length+' pasos marcados'}
+$('#tips').innerHTML=TIPS_ABD.map((t,i)=>`<label class="hi" style="cursor:pointer;margin-bottom:6px"><span><b>${t[0]}</b><br><small style="color:var(--muted)">${t[1]}</small></span><input type="checkbox" data-tip="${i}"></label>`).join('');
+$('#tips').addEventListener('change',e=>{const c=e.target.closest('[data-tip]');if(!c)return;c.checked?tipsDone.add(c.dataset.tip):tipsDone.delete(c.dataset.tip);updTips()});updTips();
+$('#alarms').innerHTML=ALARMS.map((a,i)=>`<label class="hi" style="cursor:pointer;margin-bottom:6px"><span>${a}</span><input type="checkbox" data-al></label>`).join('');
+$('#alarms').addEventListener('change',()=>{const n=$$('[data-al]:checked').length;$('#alarmres').innerHTML=n?`<div class="notice red"><b>Con ${n===1?'este signo':'estos signos'} necesitas valoración médica.</b> No lo manejes solo con banda o remedios naturales. Acude a urgencias o a tu servicio de salud.</div>`:''});
+/* ---------- respiración ---------- */
+let ex=EXS[0],dur=3,tl=180,cycles=0,running=false,paused=false,phaseI=0,phaseT=0,tick=null,done=false;
+$('#etabs').innerHTML=EXS.map((e,i)=>`<button class="tab" data-e="${i}" aria-pressed="${i===0}">${e.n.replace('Respiración ','').replace('de relajación ','')}</button>`).join('');
+$('#dchips').innerHTML=[1,3,5].map(m=>`<button class="opt" data-d="${m}" aria-pressed="${m===3}">${m} min</button>`).join('');
+function fmt(s){return Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0')}
+function selEx(i){bStop(true);ex=EXS[i];$$('#etabs .tab').forEach((t,j)=>t.setAttribute('aria-pressed',j===i));$('#etitle').textContent=ex.n;$('#egoal').innerHTML='<b>Objetivo:</b> '+ex.goal+' <span class="chip">'+ex.tag+'</span>';$('#ehow').innerHTML=ex.how.map(h=>`<li>${h}</li>`).join('');resetB()}
+function resetB(){clearInterval(tick);running=paused=done=false;cycles=0;phaseI=0;phaseT=0;tl=dur*60;$('#tleft').textContent=fmt(tl);$('#cyc').textContent=0;$('#bprogi').style.width='0';$('#bprog').setAttribute('aria-valuenow',0);$('#cue').textContent='Listo';$('#cuesub').textContent='Presiona iniciar';const o=$('#orb');o.style.transition='transform .6s';o.style.transform='scale(.62)';$('#bPause').disabled=true;$('#bPause').textContent='❚❚ Pausar';$('#bStart').disabled=false;$('#msg').textContent='';$('#afterB').hidden=true}
+function setPhase(){const p=ex.ph[phaseI];const o=$('#orb');$('#cue').textContent=p[0];const hold=/Pausa/.test(p[0]);o.style.transition='transform '+p[1]+'s ease-in-out';o.style.transform=/Inhala/.test(p[0])?'scale(1)':hold?o.style.transform:'scale(.62)';$('#cuesub').textContent=p[1]+' s';const M=['Sin prisa, tú marcas el ritmo.','Suelta los hombros.','Si te mareas, detente.','Vas muy bien.','Respira con comodidad.'];if(!hold)$('#msg').textContent=M[Math.floor(Math.random()*M.length)]}
+function startB(){if(running&&!paused)return;if(done)resetB();if(!running){running=true;phaseI=0;phaseT=0;setPhase()}paused=false;$('#bStart').disabled=true;$('#bPause').disabled=false;$('#afterB').hidden=true;clearInterval(tick);tick=setInterval(step,100);startSound()}
+function step(){const p=ex.ph[phaseI];phaseT+=.1;tl-=.1;const left=Math.ceil(p[1]-phaseT);$('#cuesub').textContent=Math.max(left,0)+' s';$('#tleft').textContent=fmt(Math.max(tl,0));const pr=1-tl/(dur*60);$('#bprogi').style.width=(pr*100)+'%';$('#bprog').setAttribute('aria-valuenow',Math.round(pr*100));
+if(phaseT>=p[1]-.001){phaseT=0;phaseI++;if(phaseI>=ex.ph.length){phaseI=0;cycles++;$('#cyc').textContent=cycles}if(tl>0)setPhase()}
+if(tl<=0){finish()}}
+function finish(){clearInterval(tick);running=false;done=true;$('#cue').textContent='¡Listo!';$('#cuesub').textContent=cycles+' ciclos';$('#orb').style.transform='scale(.8)';$('#bStart').disabled=false;$('#bPause').disabled=true;$('#msg').textContent='Ejercicio completado. Respira con normalidad.';$('#afterB').hidden=false;stopSound();toast('Ejercicio completado ✔')}
+function pauseB(){if(!running)return;if(!paused){paused=true;clearInterval(tick);$('#bPause').textContent='▶ Reanudar';$('#cue').textContent='En pausa';stopSound();const o=$('#orb');const cs=getComputedStyle(o).transform;o.style.transition='none';o.style.transform=cs}else{paused=false;$('#bPause').textContent='❚❚ Pausar';setPhase();phaseT=0;tick=setInterval(step,100);startSound()}}
+function bStop(silent){if(!running&&!paused&&!done){stopSound();return}const c=cycles;clearInterval(tick);running=paused=false;stopSound();resetB();if(!silent){$('#msg').textContent='Detuviste el ejercicio. Respira con normalidad; si el malestar sigue, consulta a un profesional.';toast('Ejercicio detenido')}}
+$('#bStart').onclick=startB;$('#bPause').onclick=pauseB;$('#bReset').onclick=()=>{resetB();toast('Reiniciado')};$('#bStop').onclick=()=>bStop(false);
+$('#etabs').addEventListener('click',e=>{const t=e.target.closest('[data-e]');if(t)selEx(+t.dataset.e)});
+$('#dchips').addEventListener('click',e=>{const t=e.target.closest('[data-d]');if(!t)return;dur=+t.dataset.d;$$('#dchips .opt').forEach(c=>c.setAttribute('aria-pressed',c===t));$('#rTime').value=String(dur);if(!running)resetB();else toast('La duración nueva se aplica al reiniciar')});
+$('#saveB').onclick=()=>{addEntry({mood:'respira',act:'Ejercicio de respiración',band:'na',score:null,note:ex.n+' · '+cycles+' ciclos'});$('#afterB').innerHTML='Guardado en Mi experiencia ✔ <a href="#experiencia">Ver</a>'};
+/* sonido ambiental (WebAudio, opcional) */
+let ac=null,node=null;
+function startSound(){if(!$('#snd').checked)return;try{if(!ac)ac=new (window.AudioContext||window.webkitAudioContext)();if(ac.state==='suspended')ac.resume();if(node)return;const n=ac.sampleRate*2,b=ac.createBuffer(1,n,ac.sampleRate),d=b.getChannelData(0);let l=0;for(let i=0;i<n;i++){const w=Math.random()*2-1;l=(l+.02*w)/1.02;d[i]=l*3.5}const s=ac.createBufferSource();s.buffer=b;s.loop=true;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=500;const g=ac.createGain();g.gain.value=.25;s.connect(f);f.connect(g);g.connect(ac.destination);s.start();node={s,g}}catch(e){}}
+function stopSound(){try{if(node){node.s.stop();node=null}}catch(e){node=null}}
+$('#snd').onchange=()=>{if($('#snd').checked){if(running&&!paused)startSound();toast('Sonido activado')}else{stopSound();toast('Sonido desactivado')}};
+/* recomendador explicable */
+function recom(){const o=$('#rObj').value,m=$('#rMom').value,t=+$('#rTime').value;const sc=EXS.map(e=>{let s=0,r=[];if(e.obj[0]===o){s+=3;r.push('coincide con tu objetivo principal (+3)')}else if(e.obj.includes(o)){s+=2;r.push('sirve también para tu objetivo (+2)')}
+if(e.mom.includes(m)){s+=2;r.push('es adecuado para este momento del día (+2)')}
+const cyc=e.ph.reduce((a,p)=>a+p[1],0);const nc=Math.floor(t*60/cyc);if(nc>=4){s+=1;r.push('con '+t+' min alcanzas ~'+nc+' ciclos (+1)')}
+if(e.ph.some(p=>/Pausa/.test(p[0]))&&o==='molestia'){s+=1;r.push('su ritmo suave y breve es cómodo con molestias (+1)')}
+return{e,s,r}}).sort((a,b)=>b.s-a.s);const top=sc[0];$('#recom').innerHTML=`<b>Sugerencia: ${top.e.n}</b> (puntaje ${top.s})<br>Por qué: ${top.r.join('; ')||'ejercicio base suave'}.<br><button class="btn s g" id="useRec" style="margin-top:8px">Usar este ejercicio</button> <small style="color:var(--muted)">Regla simple y transparente; no es un modelo entrenado.</small>`;$('#useRec').onclick=()=>{dur=t;$$('#dchips .opt').forEach(c=>c.setAttribute('aria-pressed',+c.dataset.d===t));selEx(EXS.indexOf(top.e));toast('Ejercicio seleccionado')}}
+['rObj','rMom','rTime'].forEach(i=>$('#'+i).addEventListener('change',recom));recom();selEx(0);
+/* ---------- mi experiencia ---------- */
+let mood='bien',bandv='no';
+$('#moodchips').innerHTML=MOODS.map(m=>`<button type="button" class="opt" data-mood="${m[0]}" aria-pressed="${m[0]==='bien'}">${m[1]}</button>`).join('');
+$('#eAct').innerHTML=ACTS.map(a=>`<option>${a}</option>`).join('');
+$('#moodchips').addEventListener('click',e=>{const b=e.target.closest('[data-mood]');if(!b)return;mood=b.dataset.mood;$$('#moodchips .opt').forEach(c=>c.setAttribute('aria-pressed',c===b));adviceFor(mood)});
+$('#bandchoice').addEventListener('click',e=>{const b=e.target.closest('[data-v]');if(!b)return;bandv=b.dataset.v;$$('#bandchoice .opt').forEach(c=>c.setAttribute('aria-pressed',c===b))});
+$('#eScore').oninput=e=>$('#scoreval').textContent=e.target.value;
+function adviceFor(m){const a=$('#eadv');const L={bien:'',relax:'<div class="notice green">¿Probamos una pausa? <a href="#respira">Respiración lenta y consciente →</a></div>',molestia:'<div class="notice">Para molestias leves revisa <a href="#habitos">qué puedes hacer y los signos de alarma →</a>. Si empeoran, consulta.</div>',respira:'<div class="notice green"><a href="#respira">Ir a Respira →</a></div>',aprender:'<div class="notice green"><a href="#aprende">Ir a Aprende →</a></div>'};a.innerHTML=L[m]||''}
+const KEY='vt_entries';const getE=()=>store.get(KEY,[]);
+function addEntry(o){const L=getE();L.unshift(Object.assign({id:Date.now()+Math.random(),ts:new Date().toISOString()},o));if(!store.set(KEY,L))toast('No se pudo guardar (almacenamiento bloqueado)');return L}
+$('#expform').addEventListener('submit',e=>{e.preventDefault();const note=$('#eNote').value.trim();const nn=norm(note);
+if(!mood){$('#eerr').textContent='Elige cómo te sientes.';return}$('#eerr').textContent='';
+addEntry({mood,act:$('#eAct').value,band:bandv,score:+$('#eScore').value,note});
+$('#eNote').value='';const f=$('#eflash');f.textContent=' ✔ Registro guardado';setTimeout(()=>f.textContent='',2500);toast('Registro guardado');
+if(SAFE_ALARM.some(w=>nn.includes(w)))$('#eadv').innerHTML='<div class="notice red"><b>Tu nota menciona un posible signo de alarma.</b> Si es intenso, repentino o empeora, busca valoración médica. Esta plataforma no diagnostica.</div>';
+renderExp()});
+const MN=Object.fromEntries(MOODS.map(m=>[m[0],m[1]])),MC=Object.fromEntries(MOODS.map(m=>[m[0],m[2]]));
+const BL={si:'Usó la banda',no:'Sin banda',na:'Sin banda aún'};
+function renderExp(){const L=getE();$('#sTot').textContent=L.length;const sc=L.filter(x=>x.score);$('#sAvg').textContent=sc.length?(sc.reduce((a,b)=>a+b.score,0)/sc.length).toFixed(1):'–';$('#sBand').textContent=L.filter(x=>x.band==='si').length;
+$('#hist').innerHTML=L.length?L.slice(0,40).map(x=>`<div class="hi"><span><b style="color:${MC[x.mood]}">●</b> <b>${MN[x.mood]}</b>${x.demo?' <span class="chip y">ejemplo</span>':''}<br><small style="color:var(--muted)">${new Date(x.ts).toLocaleDateString('es-CO',{day:'numeric',month:'short'})} · ${esc(x.act)} · ${BL[x.band]||''}${x.score?' · '+x.score+'/5':''}${x.note?' · “'+esc(x.note)+'”':''}</small></span><button class="ib" data-del="${x.id}" aria-label="Eliminar registro" style="width:30px;height:30px">×</button></div>`).join(''):'<p style="color:var(--muted)">Aún no hay registros. Guarda el primero arriba.</p>';
+drawCharts(L);insights(L)}
+$('#hist').addEventListener('click',e=>{const b=e.target.closest('[data-del]');if(!b)return;store.set(KEY,getE().filter(x=>String(x.id)!==b.dataset.del));renderExp();toast('Registro eliminado')});
+function drawCharts(L){const c=$('#charts');if(!L.length){c.innerHTML='<p style="color:var(--muted)">Los gráficos aparecen cuando guardes registros.</p>';return}
+const cnt=MOODS.map(m=>L.filter(x=>x.mood===m[0]).length),mx=Math.max(...cnt,1);
+let bars=MOODS.map((m,i)=>{const w=cnt[i]/mx*190;return `<g transform="translate(0 ${i*30})"><text x="0" y="14" font-size="11" fill="currentColor">${m[1].length>26?m[1].slice(0,24)+'…':m[1]}</text><rect x="170" y="2" width="${w}" height="16" rx="8" fill="${m[2]}"><title>${m[1]}: ${cnt[i]}</title></rect><text x="${176+w}" y="14" font-size="11" fill="currentColor">${cnt[i]}</text></g>`}).join('');
+const days=[];for(let i=13;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);days.push(d.toISOString().slice(0,10))}
+const pts=days.map(d=>{const s=L.filter(x=>x.score&&x.ts.slice(0,10)===d);return s.length?s.reduce((a,b)=>a+b.score,0)/s.length:null});
+let path='',dots='';pts.forEach((v,i)=>{if(v==null)return;const x=10+i*(300/13),y=70-(v-1)*15;path+=(path?'L':'M')+x.toFixed(1)+' '+y.toFixed(1);dots+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="#FF6B4A"><title>${days[i]}: ${v.toFixed(1)}/5</title></circle>`});
+const bsi=L.filter(x=>x.band==='si').length,tot=L.length,circ=2*Math.PI*30,da=bsi/tot*circ;
+c.innerHTML=`<h4 style="font-size:14px;margin:0 0 6px">Estados registrados</h4><svg class="chart" viewBox="0 0 400 150" role="img" aria-label="Gráfico de barras de estados">${bars}</svg>
+<h4 style="font-size:14px;margin:10px 0 6px">Bienestar (1–5), últimos 14 días</h4><svg class="chart" viewBox="0 0 320 90" role="img" aria-label="Línea de bienestar"><g stroke="currentColor" opacity=".15"><path d="M10 10H310M10 40H310M10 70H310"/></g>${path?`<path d="${path}" fill="none" stroke="#17745A" stroke-width="2.5"/>`:''}${dots}${path?'':'<text x="10" y="45" font-size="12" fill="currentColor">Sin puntuaciones recientes</text>'}</svg>
+<h4 style="font-size:14px;margin:10px 0 6px">Uso de la banda</h4><svg viewBox="0 0 220 80" style="max-width:260px" role="img" aria-label="Uso de la banda"><circle cx="40" cy="40" r="30" fill="none" stroke="#E6DCC6" stroke-width="12"/><circle cx="40" cy="40" r="30" fill="none" stroke="#FF6B4A" stroke-width="12" stroke-dasharray="${da} ${circ}" transform="rotate(-90 40 40)"/><text x="40" y="44" text-anchor="middle" font-size="12" fill="currentColor">${Math.round(bsi/tot*100)}%</text><text x="85" y="36" font-size="12" fill="currentColor">${bsi} con banda</text><text x="85" y="54" font-size="12" fill="currentColor">${tot-bsi} sin banda</text></svg>`}
+function insights(L){const el=$('#ins');if(L.length<5){el.innerHTML='<div>Registra al menos <b>5</b> entradas para ver patrones ('+L.length+' por ahora).</div>';return}
+const top=(arr)=>{const m={};arr.forEach(x=>m[x]=(m[x]||0)+1);return Object.entries(m).sort((a,b)=>b[1]-a[1])[0]};const out=[];
+const tm=top(L.map(x=>x.mood));out.push(`Estado más frecuente: <b>${MN[tm[0]]}</b> (${tm[1]} de ${L.length}).`);
+const w=L.filter(x=>x.band==='si'&&x.score),n=L.filter(x=>x.band!=='si'&&x.score);const av=a=>a.reduce((s,x)=>s+x.score,0)/a.length;
+if(w.length>=2&&n.length>=2)out.push(`Bienestar promedio con banda: <b>${av(w).toFixed(1)}</b> · sin banda: <b>${av(n).toFixed(1)}</b>. Con pocos datos esto no prueba que la banda cause la diferencia.`);
+const ta=top(L.map(x=>x.act));out.push(`Actividad más registrada: <b>${esc(ta[0])}</b> (${ta[1]}).`);
+const g={};L.filter(x=>x.score).forEach(x=>(g[x.act]=g[x.act]||[]).push(x));const bt=Object.entries(g).filter(e=>e[1].length>=2).sort((a,b)=>av(b[1])-av(a[1]))[0];if(bt)out.push(`Actividad con mayor bienestar promedio (≥2 registros): <b>${esc(bt[0])}</b> (${av(bt[1]).toFixed(1)}/5).`);
+if(L.some(x=>x.demo))out.push('<i>Incluye datos de ejemplo ficticios.</i>');el.innerHTML=out.map(x=>`<div>${x}</div>`).join('')}
+$('#demoBtn').onclick=()=>{const L=getE();const acts=ACTS,ms=MOODS.map(m=>m[0]);const demo=[];for(let i=0;i<10;i++){const d=new Date();d.setDate(d.getDate()-i);demo.push({id:'d'+i+Date.now(),ts:d.toISOString(),mood:ms[(i*3)%5],act:acts[i%acts.length],band:['si','no','si','na'][i%4],score:[3,4,3,5,2,4,3,4,5,3][i],note:'',demo:true})}store.set(KEY,[...demo,...L]);renderExp();toast('Datos de ejemplo (ficticios) cargados')};
+$('#clrBtn').onclick=()=>$('#clrconf').hidden=false;$('#clrNo').onclick=()=>$('#clrconf').hidden=true;$('#clrYes').onclick=()=>{store.set(KEY,[]);$('#clrconf').hidden=true;renderExp();toast('Registros borrados')};
+$('#csvBtn').onclick=()=>{const L=getE();if(!L.length){toast('No hay registros para descargar');return}const rows=[['fecha','estado','actividad','banda','bienestar','nota','ejemplo']].concat(L.map(x=>[x.ts,MN[x.mood],x.act,x.band,x.score||'',(x.note||'').replace(/"/g,'""'),x.demo?'si':'no']));const csv=rows.map(r=>r.map(c=>'"'+c+'"').join(',')).join('\n');try{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='mi_experiencia_vitalis.csv';a.click();toast('CSV descargado')}catch(e){toast('No se pudo descargar')}};
+/* ---------- asistente ---------- */
+function msg(h,c){const d=document.createElement('div');d.className='msg '+c;d.innerHTML=h;const l=$('#log');l.appendChild(d);l.scrollTop=l.scrollHeight}
+const LINKN=Object.fromEntries(MODS);
+const lks=a=>a&&a.length?'<span class="src">Ver también: '+a.map(m=>`<a href="#${m}">${LINKN[m]}</a>`).join(' · ')+'</span>':'';
+function answer(q){const n=norm(q);
+if(SAFE_ALARM.some(w=>n.includes(w)))return{h:'<b>Lo que describes puede requerir atención médica.</b> Si el dolor es intenso o repentino, hay fiebre, vómitos persistentes, desmayo, sangrado o dificultad para respirar, acude a urgencias o a tu servicio de salud. No lo manejes solo con la banda ni con remedios naturales. No puedo diagnosticarte.'+lks(['habitos','seguridad']),c:'b warn'};
+if(SAFE_MED.some(w=>n.includes(w)))return{h:'No puedo diagnosticar ni recomendar medicamentos, dosis o tratamientos: eso corresponde a un profesional de la salud que conozca tu caso. Si quieres, te cuento qué dice VITALIS sobre hábitos generales y signos de alarma.'+lks(['habitos','seguridad']),c:'b warn'};
+let best=null,bs=0;KB.forEach(e=>{let s=0;e.k.forEach(k=>{const kk=norm(k);const re=new RegExp('(^|[^a-z0-9])'+kk.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+(kk.length<=3?'($|[^a-z0-9])':''));if(re.test(n))s+=kk.length>4?2:1});if(s>bs){bs=s;best=e}});
+if(best&&bs>0){let h=best.a+lks(best.l);if(best.wa)h+=`<span class="src"><a href="${WA_URL}" target="_blank" rel="noopener">Abrir WhatsApp</a></span>`;return{h,c:'b'}}
+return{h:'No tengo información sobre eso en mis contenidos. Puedo ayudarte con el producto, las plantas, la respiración, hábitos y seguridad. Para algo más, consulta a un profesional o escríbenos por <a href="'+WA_URL+'" target="_blank" rel="noopener">WhatsApp</a>.',c:'b'}}
+
+/* ---------- RAG: recuperación BM25 sobre los contenidos ---------- */
+const STOP=new Set('de la el los las un una unos unas y o en que es por con para del al se su sus lo como mas pero muy sin sobre este esta estos estas ser son hay puede pueden tambien cada solo todo todos'.split(' '));
+const tok=s=>norm(s).split(/[^a-z0-9]+/).filter(w=>w.length>2&&!STOP.has(w)).map(w=>w.slice(0,6));
+const strip=h=>h.replace(/<[^>]+>/g,'');
+const DOCS=[];
+Object.keys(PLANTS).forEach(k=>{const p=PLANTS[k];DOCS.push({t:'Ficha: '+p.n,m:'plantas',x:[p.n,p.lat,p.carac,p.trad.join(' '),p.prep.join(' '),p.evid,p.prec.join(' '),p.inFill?'parte del relleno':'complementaria no es parte del relleno'].join('. '),plant:k})});
+ARTS.forEach(a=>DOCS.push({t:a.t,m:'aprende',x:a.t+'. '+a.b.join(' ')}));
+FAQ.forEach(f=>DOCS.push({t:f[0],m:f[2],x:f[0]+' '+f[1]}));
+HABITS.forEach(h=>DOCS.push({t:h[0],m:'habitos',x:h[0]+'. '+h[1]}));
+EXS.forEach(e=>DOCS.push({t:e.n,m:'respira',x:e.n+'. '+e.goal+' '+e.how.join(' ')}));
+KB.forEach(e=>DOCS.push({t:'Respuesta preparada: '+e.k[0],m:(e.l&&e.l[0])||'inicio',x:e.k.join(' ')+' '+strip(e.a)}));
+DOCS.push({t:'Datos pendientes de validación',m:'producto',x:'pendiente validar temperatura tiempo materiales tallas lavado '+PENDING.map(p=>p[0]).join(' ')});
+DOCS.forEach(d=>{d.tk=tok(d.t+' '+d.x);d.len=d.tk.length});
+const AVG=DOCS.reduce((s,d)=>s+d.len,0)/DOCS.length,DF={};DOCS.forEach(d=>new Set(d.tk).forEach(w=>DF[w]=(DF[w]||0)+1));
+function retrieve(q,k=3){const qt=[...new Set(tok(q))];const N=DOCS.length;return DOCS.map(d=>{let s=0;qt.forEach(w=>{const f=d.tk.filter(x=>x===w).length;if(!f)return;const idf=Math.log(1+(N-(DF[w]||0)+.5)/((DF[w]||0)+.5));s+=idf*f*2.2/(f+1.2*(.25+.75*d.len/AVG))});if(qt.some(w=>tok(d.t).includes(w)))s*=1.25;return{d,s}}).filter(r=>r.s>0).sort((a,b)=>b.s-a.s).slice(0,k)}
+const AI={connected:false};
+async function pingAI(){const dot=$('#aidot'),tx=$('#aitxt');if(!/^https?:/.test(location.protocol)){AI.connected=false;dot.className='dot';tx.textContent='LLM no conectado (abierto en local). Funcionan seguridad + recuperación.';return}
+try{const c=new AbortController();setTimeout(()=>c.abort(),3500);const r=await fetch('/.netlify/functions/vitalis-ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ping:true}),signal:c.signal});const j=await r.json();AI.connected=!!j.llm}catch(e){AI.connected=false}
+dot.className='dot'+(AI.connected?' on':'');tx.textContent=AI.connected?'LLM conectado: respuestas generadas con RAG y reglas de seguridad.':'LLM no conectado. Funcionan seguridad + recuperación sobre nuestros contenidos.'}
+function pipe(s){return '<div class="pipe">'+s.map(x=>`<span class="${x[1]}">${x[0]}</span>`).join('')+'</div>'}
+async function respond(q){const n=norm(q);
+if(SAFE_ALARM.some(w=>n.includes(w))||SAFE_MED.some(w=>n.includes(w))){const r=answer(q);return{h:r.h+pipe([['① Seguridad: activada','no'],['② Recuperación: omitida','' ],['③ Modelo: no consultado','']]),c:r.c}}
+const R=retrieve(q,3);const rule=answer(q);const ruleHit=!/^No tengo información/.test(strip(rule.h));
+const srcs=R.length?'<span class="src">Fuentes consultadas: '+R.map(r=>`<a href="#${r.d.m}">${esc(r.d.t.replace('Respuesta preparada: ','Resp. preparada: '))}</a>`).join(' · ')+'</span>':'';
+if(AI.connected&&R.length){try{const c=new AbortController();setTimeout(()=>c.abort(),20000);const r=await fetch('/.netlify/functions/vitalis-ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q.slice(0,500),passages:R.map(x=>({title:x.d.t,text:x.d.x.slice(0,1100)}))}),signal:c.signal});const j=await r.json();if(j.answer)return{h:esc(j.answer).replace(/\n/g,'<br>')+srcs+pipe([['① Seguridad ✔','on'],['② Recuperación: '+R.length+' fuentes','on'],['③ Generado por LLM con RAG','llm']]),c:j.safety?'b warn':'b'}}catch(e){}}
+if(ruleHit)return{h:rule.h+srcs+pipe([['① Seguridad ✔','on'],['② Recuperación: '+R.length+' fuentes','on'],['③ Respuesta preparada (sin LLM)','']]),c:'b'};
+if(R.length&&R[0].s>2.2){const ex=R[0].d.x.length>340?R[0].d.x.slice(0,340).replace(/\s\S*$/,'')+'…':R[0].d.x;return{h:'Esto es lo más cercano que encontré en nuestros contenidos:<br><i>'+esc(ex)+'</i>'+srcs+'<span class="src">No es una respuesta redactada por un modelo; si no te sirve, consulta a un profesional.</span>'+pipe([['① Seguridad ✔','on'],['② Recuperación: '+R.length+' fuentes','on'],['③ Extracto de la fuente (sin LLM)','']]),c:'b'}}
+return{h:rule.h+pipe([['① Seguridad ✔','on'],['② Recuperación: sin coincidencias','' ],['③ Sin información','']]),c:'b'}}
+async function ask(q){q=q.trim();if(!q)return;msg(esc(q),'u');const w=document.createElement('div');w.className='msg b';w.textContent='Consultando contenidos…';$('#log').appendChild(w);const r=await respond(q);w.remove();msg(r.h,r.c)}
+function chatInit(){$('#log').innerHTML='';msg('Hola, soy el asistente de <b>VITALIS SMART CARE</b>. Primero aplico <b>reglas de seguridad</b>, luego busco en los contenidos de VITALIS y te muestro las fuentes. La redacción con un modelo de lenguaje solo está activa si el estado de la derecha dice “conectado”. No diagnostico ni receto. ¿En qué te ayudo?','b')}
+chatInit();$('#sugg').innerHTML=SUGG.map(s=>`<button class="opt" data-q="${esc(s)}">${esc(s)}</button>`).join('');
+$('#sugg').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(b)ask(b.dataset.q)});
+$('#cform').addEventListener('submit',e=>{e.preventDefault();const i=$('#cin');ask(i.value);i.value=''});
+$('#clrchat').onclick=chatInit;
+/* ---------- aprende ---------- */
+let cat='Todas',aq='';
+$('#acats').innerHTML=ARTCATS.map(c=>`<button class="tab" data-c="${c}" aria-pressed="${c==='Todas'}">${c}</button>`).join('');
+function renderArts(){const q=norm(aq);const L=ARTS.filter(a=>(cat==='Todas'||a.cat===cat)&&(!q||norm(a.t+' '+a.s+' '+a.b.join(' ')).includes(q)));$('#acount').textContent=L.length+' artículo'+(L.length===1?'':'s');$('#agrid').innerHTML=L.length?L.map(a=>`<button class="card hv art-card" data-art="${a.id}"><div class="im" style="background:${ARTCOL[a.art]}">${ART[a.art]()}</div><div class="tx"><span class="chip">${a.cat}</span><h3 style="margin-top:8px;font-size:18px">${a.t}</h3><p style="font-size:14px;color:var(--muted);margin:0">${a.s}</p></div></button>`).join(''):'<p>No encontramos artículos con ese filtro.</p>'}
+$('#acats').addEventListener('click',e=>{const b=e.target.closest('[data-c]');if(!b)return;cat=b.dataset.c;$$('#acats .tab').forEach(t=>t.setAttribute('aria-pressed',t===b));renderArts()});
+$('#asrch').addEventListener('input',e=>{aq=e.target.value;renderArts()});
+$('#agrid').addEventListener('click',e=>{const b=e.target.closest('[data-art]');if(!b)return;const a=ARTS.find(x=>x.id===b.dataset.art);openModal(`<div class="mhead" style="background:linear-gradient(135deg,#17745A,#0B3D2E)"><div style="width:100px;flex:none">${ART[a.art]()}</div><div><span class="chip" style="background:#fff9">${a.cat}</span><h2 id="mtitle" style="font-size:24px">${a.t}</h2></div><button class="x" aria-label="Cerrar">×</button></div><div class="mbody">${a.b.map(p=>`<p>${esc(p)}</p>`).join('')}<h3>Referencias</h3><ul>${a.r.map(r=>`<li><a href="${REFS[r].u}" target="_blank" rel="noopener">${esc(REFS[r].t)}</a></li>`).join('')}</ul><div class="notice">Contenido educativo general. No sustituye la consulta con personal de salud.</div></div>`)});
+renderArts();
+$('#reflist').innerHTML=Object.values(REFS).map(r=>`<li><a href="${r.u}" target="_blank" rel="noopener">${esc(r.t)}</a></li>`).join('');
+/* ---------- FAQ ---------- */
+$('#faqacc').innerHTML=FAQ.map(f=>`<details><summary>${f[0]}</summary><div class="in" style="border:0">${esc(f[1])}<br><a href="#${f[2]}">Ver módulo relacionado →</a></div></details>`).join('');
+/* ---------- búsqueda global ---------- */
+const IDX=[];MODS.forEach(m=>IDX.push({t:m[1],m:m[0],x:m[1]}));Object.keys(PLANTS).forEach(k=>{const p=PLANTS[k];IDX.push({t:p.n+' (planta)',m:'plantas',x:p.n+' '+p.lat+' '+p.carac,plant:k})});ARTS.forEach(a=>IDX.push({t:a.t,m:'aprende',x:a.t+' '+a.s+' '+a.b.join(' '),art:a.id}));FAQ.forEach(f=>IDX.push({t:f[0],m:'faq',x:f[0]+' '+f[1]}));HABITS.forEach(h=>IDX.push({t:h[0],m:'habitos',x:h[0]+' '+h[1]}));EXS.forEach(e=>IDX.push({t:e.n,m:'respira',x:e.n+' '+e.goal}));
+const gs=$('#gs'),gr=$('#gsres');gs.addEventListener('input',()=>{const q=norm(gs.value.trim());if(q.length<2){gr.hidden=true;return}const R=IDX.filter(i=>norm(i.x).includes(q)).slice(0,8);gr.innerHTML=R.length?R.map((r,i)=>`<a href="#${r.m}" data-si="${IDX.indexOf(r)}">${esc(r.t)}<small>en ${LINKN[r.m]}</small></a>`).join(''):'<div style="padding:10px;font-size:14px">Sin resultados. Prueba con otra palabra o pregunta al <a href="#asistente">asistente</a>.</div>';gr.hidden=false});
+gr.addEventListener('click',e=>{const a=e.target.closest('[data-si]');if(a){const r=IDX[+a.dataset.si];gs.value='';gr.hidden=true;if(r.plant)setTimeout(()=>plantModal(r.plant),200)}else if(e.target.closest('a')){gr.hidden=true;gs.value=''}});
+document.addEventListener('click',e=>{if(!e.target.closest('.sbox'))gr.hidden=true});
+/* arranque */
+route();pingAI();
+window.__vitalis={answer,respond,retrieve,EXS};
+})();
+</script></body></html>
